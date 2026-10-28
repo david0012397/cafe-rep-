@@ -1,0 +1,2228 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cafe Repertwahr | Art, Literature & Live-Performance Rooftop Cafe | Lucknow</title>
+  <meta name="description" content="Where Literature, Live Art, and Culinary Craft Meet Above the City. Lucknow's premier art, library & rooftop cafe on Faizabad Road. Open daily 12:00 PM – 11:00 PM." />
+  <meta name="theme-color" content="#183124" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23183124'/><path d='M30 65 L50 25 L70 65 Z' fill='none' stroke='%23C85A32' stroke-width='6'/><circle cx='50' cy='42' r='8' fill='%23E5A93C'/><path d='M25 75 Q50 68 75 75' stroke='%23FAF6F0' stroke-width='4' fill='none'/></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            terracotta: {
+              50: '#FDF6F3',
+              100: '#FAEAE4',
+              200: '#F5D5C8',
+              300: '#EDB5A1',
+              400: '#E08B6B',
+              500: '#C85A32',
+              600: '#B44723',
+              700: '#95371B',
+              800: '#782E1A',
+              900: '#632819',
+            },
+            forest: {
+              50: '#F2F7F4',
+              100: '#E1EDE6',
+              200: '#C5DCCF',
+              300: '#9BC3AC',
+              400: '#6FA484',
+              500: '#488562',
+              600: '#346A4D',
+              700: '#2A553E',
+              800: '#234433',
+              900: '#183124',
+              950: '#0E1F16',
+            },
+            parchment: {
+              50: '#FDFCF9',
+              100: '#FAF6F0',
+              200: '#F4ECE0',
+              300: '#EBDDCB',
+              400: '#DEC9B0',
+              500: '#CDB192',
+            },
+            charcoal: {
+              950: '#0F1210',
+              900: '#171A18',
+              800: '#242926',
+              700: '#363D39',
+              600: '#525C56',
+              500: '#738078',
+            },
+            warmGold: {
+              400: '#F3C068',
+              500: '#E5A93C',
+              600: '#C98C27',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+            editorial: ['"Instrument Serif"', '"Playfair Display"', 'serif'],
+          },
+          boxShadow: {
+            'warm': '0 10px 30px -10px rgba(200, 90, 50, 0.25)',
+            'warm-lg': '0 20px 40px -15px rgba(200, 90, 50, 0.35)',
+            'forest': '0 10px 30px -10px rgba(24, 49, 36, 0.35)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Lucide Icons & Canvas Confetti CDNs -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F4ECE0;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C85A32;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #95371B;
+    }
+
+    /* Ambient Fairy Glow */
+    @keyframes fairyGlow {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.1); }
+    }
+    .fairy-glow {
+      animation: fairyGlow 4s ease-in-out infinite;
+    }
+
+    /* Range slider custom styling */
+    input[type=range] {
+      accent-color: #C85A32;
+    }
+  </style>
+</head>
+<body class="bg-parchment-100 text-charcoal-900 font-sans antialiased selection:bg-terracotta-500 selection:text-white">
+
+  <!-- ==================== TOP STICKY NAVBAR ==================== -->
+  <header id="mainNavbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gradient-to-b from-charcoal-950/85 via-charcoal-950/50 to-transparent py-4">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center gap-3 text-left group">
+        <div class="w-10 h-10 rounded-full bg-forest-900 border border-warmGold-500/40 flex items-center justify-center text-warmGold-400 group-hover:rotate-6 transition-transform shadow-md">
+          <i data-lucide="book-open" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="block font-serif text-xl sm:text-2xl font-bold tracking-tight text-parchment-50 group-hover:text-warmGold-400 transition-colors" id="navLogoText">
+            Cafe Repertwahr
+          </span>
+          <span class="block text-[10px] tracking-widest uppercase font-semibold text-parchment-300" id="navSubLogoText">
+            Art • Literature • Rooftop
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center gap-1 xl:gap-2">
+        <a href="#home" onclick="navigateTo('home'); return false;" class="nav-item px-3.5 py-2 rounded-full text-sm font-medium transition-all text-parchment-200 hover:text-white hover:bg-white/10" data-page="home">Home</a>
+        <a href="#menu" onclick="navigateTo('menu'); return false;" class="nav-item px-3.5 py-2 rounded-full text-sm font-medium transition-all text-parchment-200 hover:text-white hover:bg-white/10" data-page="menu">Menu</a>
+        <a href="#experience" onclick="navigateTo('experience'); return false;" class="nav-item px-3.5 py-2 rounded-full text-sm font-medium transition-all text-parchment-200 hover:text-white hover:bg-white/10" data-page="experience">The Experience</a>
+        <a href="#events" onclick="navigateTo('events'); return false;" class="nav-item px-3.5 py-2 rounded-full text-sm font-medium transition-all text-parchment-200 hover:text-white hover:bg-white/10" data-page="events">Events</a>
+        <a href="#gallery" onclick="navigateTo('gallery'); return false;" class="nav-item px-3.5 py-2 rounded-full text-sm font-medium transition-all text-parchment-200 hover:text-white hover:bg-white/10" data-page="gallery">Gallery</a>
+        <a href="#visit" onclick="navigateTo('visit'); return false;" class="nav-item px-3.5 py-2 rounded-full text-sm font-medium transition-all text-parchment-200 hover:text-white hover:bg-white/10" data-page="visit">Visit &amp; Reservations</a>
+      </nav>
+
+      <!-- Desktop Right CTA -->
+      <div class="hidden lg:flex items-center gap-3">
+        <button onclick="openReservationModal()" class="px-5 py-2.5 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-sm transition-all shadow-warm hover:shadow-warm-lg transform hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer">
+          <i data-lucide="calendar" class="w-4 h-4 text-warmGold-400"></i>
+          <span>Book a Table</span>
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <div class="flex items-center gap-2 lg:hidden">
+        <button onclick="openReservationModal()" class="px-3.5 py-1.5 rounded-full bg-terracotta-500 text-white text-xs font-semibold shadow-sm flex items-center gap-1.5">
+          <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+          <span>Book</span>
+        </button>
+        <button onclick="toggleMobileDrawer()" class="p-2 rounded-lg text-parchment-50 hover:bg-white/10" aria-label="Toggle menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Slide-out Drawer -->
+  <div id="mobileDrawer" class="fixed inset-0 z-50 hidden">
+    <div onclick="toggleMobileDrawer()" class="fixed inset-0 bg-charcoal-950/60 backdrop-blur-sm"></div>
+    <div class="fixed top-0 right-0 bottom-0 w-4/5 max-w-sm bg-parchment-50 p-6 flex flex-col justify-between shadow-2xl overflow-y-auto">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-parchment-300">
+          <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-full bg-forest-900 text-warmGold-400 flex items-center justify-center">
+              <i data-lucide="book-open" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <h3 class="font-serif font-bold text-charcoal-900 text-lg">Cafe Repertwahr</h3>
+              <p class="text-[10px] text-terracotta-600 font-bold uppercase tracking-wider">Faizabad Road, Lucknow</p>
+            </div>
+          </div>
+          <button onclick="toggleMobileDrawer()" class="p-2 rounded-full hover:bg-parchment-200 text-charcoal-700">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <nav class="py-6 space-y-1">
+          <a href="#home" onclick="navigateTo('home'); toggleMobileDrawer(); return false;" class="block px-4 py-3 rounded-xl text-base font-semibold text-charcoal-800 hover:bg-parchment-200">Home</a>
+          <a href="#menu" onclick="navigateTo('menu'); toggleMobileDrawer(); return false;" class="block px-4 py-3 rounded-xl text-base font-semibold text-charcoal-800 hover:bg-parchment-200">Menu</a>
+          <a href="#experience" onclick="navigateTo('experience'); toggleMobileDrawer(); return false;" class="block px-4 py-3 rounded-xl text-base font-semibold text-charcoal-800 hover:bg-parchment-200">The Experience</a>
+          <a href="#events" onclick="navigateTo('events'); toggleMobileDrawer(); return false;" class="block px-4 py-3 rounded-xl text-base font-semibold text-charcoal-800 hover:bg-parchment-200">Events</a>
+          <a href="#gallery" onclick="navigateTo('gallery'); toggleMobileDrawer(); return false;" class="block px-4 py-3 rounded-xl text-base font-semibold text-charcoal-800 hover:bg-parchment-200">Gallery</a>
+          <a href="#visit" onclick="navigateTo('visit'); toggleMobileDrawer(); return false;" class="block px-4 py-3 rounded-xl text-base font-semibold text-charcoal-800 hover:bg-parchment-200">Visit &amp; Reservations</a>
+        </nav>
+      </div>
+
+      <div class="pt-6 border-t border-parchment-300 space-y-3">
+        <button onclick="toggleMobileDrawer(); openReservationModal();" class="w-full py-3 rounded-full bg-terracotta-500 text-white font-semibold text-sm shadow-warm flex items-center justify-center gap-2">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>Book a Table Online</span>
+        </button>
+        <div class="text-center text-xs text-charcoal-600">
+          <p class="font-medium text-forest-800">Open Daily: 12:00 PM – 11:00 PM</p>
+          <a href="tel:+919170575793" class="text-terracotta-600 font-semibold mt-1 inline-block">+91 91705 75793</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN CONTENT PAGES ==================== -->
+  <main id="mainContainer" class="flex-1">
+
+    <!-- ==================== PAGE 1: HOME ==================== -->
+    <div id="page-home" class="page-section">
+      <!-- 300-FRAME CINEMATIC CANVAS HERO SECTION -->
+      <div id="heroContainer" class="relative w-full h-[420vh] bg-charcoal-950 text-parchment-100">
+        <!-- Sticky Fullscreen Canvas Viewport -->
+        <div class="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">
+          <canvas id="cafeCanvas" class="absolute inset-0 w-full h-full object-cover"></canvas>
+
+          <!-- Gradient overlays -->
+          <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/40 to-charcoal-950/70 pointer-events-none"></div>
+          <div class="absolute top-1/4 right-1/4 w-72 h-72 bg-warmGold-500/10 rounded-full blur-3xl pointer-events-none fairy-glow"></div>
+          <div class="absolute bottom-1/3 left-1/5 w-80 h-80 bg-terracotta-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <!-- Narrative Overlays Container -->
+          <div class="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 pointer-events-none">
+            <!-- STAGE 1: HERO -->
+            <div id="stage-1" class="narrative-stage max-w-3xl pointer-events-auto transition-all duration-500">
+              <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-forest-900/80 border border-forest-500/40 text-forest-200 text-xs sm:text-sm font-medium tracking-wide mb-6 backdrop-blur-md shadow-lg">
+                <span class="w-2 h-2 rounded-full bg-warmGold-400 animate-pulse"></span>
+                <span>3rd Floor, Kala Niketan, Faizabad Rd • Daily 12 PM - 11 PM</span>
+              </div>
+              <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-parchment-50 leading-[1.08] tracking-tight mb-6 drop-shadow-md">
+                A Sanctuary for <span class="italic font-light text-terracotta-400">Readers,</span> Thinkers &amp; Nighttime Conversations.
+              </h1>
+              <p class="text-base sm:text-xl text-parchment-300 font-normal leading-relaxed mb-8 max-w-2xl drop-shadow">
+                Lucknow's premier art, literature, and live-performance rooftop cafe on Faizabad Road. Open daily from 12:00 PM to 11:00 PM.
+              </p>
+              <div class="flex flex-wrap items-center gap-4">
+                <button onclick="navigateTo('menu')" class="px-7 py-3.5 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-medium text-sm sm:text-base transition-all shadow-warm-lg flex items-center gap-2.5 cursor-pointer">
+                  <i data-lucide="utensils-crossed" class="w-4 h-4"></i>
+                  <span>Explore Menu</span>
+                </button>
+                <button onclick="openReservationModal()" class="px-7 py-3.5 rounded-full bg-forest-900/90 hover:bg-forest-800 text-parchment-100 border border-forest-500/40 font-medium text-sm sm:text-base transition-all shadow-forest flex items-center gap-2.5 cursor-pointer backdrop-blur-md">
+                  <i data-lucide="calendar" class="w-4 h-4 text-warmGold-400"></i>
+                  <span>Book a Table</span>
+                </button>
+                <button onclick="navigateTo('visit')" class="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-parchment-100 border border-white/20 font-medium text-sm sm:text-base transition-all flex items-center gap-2 cursor-pointer backdrop-blur-md">
+                  <i data-lucide="map-pin" class="w-4 h-4 text-terracotta-400"></i>
+                  <span>Get Directions</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- STAGE 2: THE LIBRARY LOUNGE -->
+            <div id="stage-2" class="narrative-stage max-w-2xl pointer-events-auto transition-all duration-500 hidden">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-terracotta-500/20 border border-terracotta-500/40 text-terracotta-300 text-xs uppercase tracking-widest font-semibold mb-4 backdrop-blur-md">
+                <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                <span>Zone 01 • The Library Lounge</span>
+              </div>
+              <h2 class="text-3xl sm:text-5xl font-serif font-bold text-parchment-50 leading-tight mb-4">
+                Sunlit Bookshelves &amp; <span class="text-warmGold-400 italic">Quiet Thoughts</span>
+              </h2>
+              <p class="text-base sm:text-lg text-parchment-300 leading-relaxed mb-6">
+                Step off Faizabad Road into an indoor haven curated with hundreds of titles across contemporary fiction, Indian theatre, poetry, and philosophy. Perfect for remote work, afternoon reading, and mindful coffee.
+              </p>
+              <div class="flex flex-wrap gap-2.5 mb-6">
+                <span class="px-3 py-1 rounded-md bg-white/10 text-xs text-parchment-200 border border-white/10">✓ Curated 1000+ Books</span>
+                <span class="px-3 py-1 rounded-md bg-white/10 text-xs text-parchment-200 border border-white/10">✓ Free High-Speed Wi-Fi</span>
+                <span class="px-3 py-1 rounded-md bg-white/10 text-xs text-parchment-200 border border-white/10">✓ Single-Estate Artisanal Brews</span>
+              </div>
+              <button onclick="navigateTo('experience')" class="text-sm font-semibold text-warmGold-400 hover:text-warmGold-300 inline-flex items-center gap-2">
+                <span>Explore Spatial Zones</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- STAGE 3: THE GREEN ROOFTOP -->
+            <div id="stage-3" class="narrative-stage max-w-2xl ml-auto text-right pointer-events-auto transition-all duration-500 hidden">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forest-800/80 border border-forest-500/40 text-forest-200 text-xs uppercase tracking-widest font-semibold mb-4 backdrop-blur-md">
+                <i data-lucide="moon" class="w-3.5 h-3.5 text-warmGold-400"></i>
+                <span>Zone 02 • The Green Rooftop</span>
+              </div>
+              <h2 class="text-3xl sm:text-5xl font-serif font-bold text-parchment-50 leading-tight mb-4">
+                Breezes by Day, <span class="italic text-terracotta-400">Fairy Lights</span> by Night
+              </h2>
+              <p class="text-base sm:text-lg text-parchment-300 leading-relaxed mb-6">
+                Perched on the 3rd floor of Kala Niketan, our leafy terrace catches evening breezes and illuminates beneath warm fairy lights as dusk falls over Lucknow. Seating for 80 with open skies.
+              </p>
+              <button onclick="openReservationModal()" class="px-7 py-3 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-medium text-sm transition-all shadow-warm-lg cursor-pointer">
+                Reserve an Outdoor Table
+              </button>
+            </div>
+
+            <!-- STAGE 4: THE REPERTWAHR STAGE -->
+            <div id="stage-4" class="narrative-stage max-w-2xl mx-auto text-center pointer-events-auto transition-all duration-500 hidden">
+              <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-warmGold-500/20 border border-warmGold-500/40 text-warmGold-300 text-xs uppercase tracking-widest font-semibold mb-4 backdrop-blur-md">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                <span>Zone 03 • Repertwahr Cultural Stage</span>
+              </div>
+              <h2 class="text-3xl sm:text-5xl font-serif font-bold text-parchment-50 leading-tight mb-4">
+                Where Performing Art Meets <span class="italic text-warmGold-400">Culinary Craft</span>
+              </h2>
+              <p class="text-base sm:text-lg text-parchment-300 leading-relaxed mb-8">
+                Born from the spirit of the Repertwahr Festival movement. Host to acoustic singer-songwriters, open mic poetry circles, and dramatic monologues (concluding at 11:00 PM).
+              </p>
+              <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="navigateTo('events')" class="px-7 py-3.5 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-medium text-sm transition-all shadow-warm-lg flex items-center gap-2">
+                  <span>View Upcoming Live Lineup</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom HUD: Scrubber & Controls -->
+          <div class="absolute bottom-6 left-0 right-0 z-20 px-6 sm:px-8 pointer-events-auto">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 p-3 sm:p-4 rounded-2xl bg-charcoal-900/85 border border-white/10 backdrop-blur-xl shadow-2xl">
+              <!-- Jump buttons -->
+              <div class="flex items-center gap-1.5 sm:gap-2">
+                <span class="text-[11px] uppercase tracking-wider text-parchment-400 font-semibold mr-1 hidden md:inline">Jump To:</span>
+                <button onclick="jumpToFrame(1)" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-white/5 text-parchment-300 hover:bg-white/10 transition-colors">Entrance</button>
+                <button onclick="jumpToFrame(100)" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-white/5 text-parchment-300 hover:bg-white/10 transition-colors">Library</button>
+                <button onclick="jumpToFrame(200)" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-white/5 text-parchment-300 hover:bg-white/10 transition-colors">Rooftop</button>
+                <button onclick="jumpToFrame(290)" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-white/5 text-parchment-300 hover:bg-white/10 transition-colors">Twilight</button>
+              </div>
+
+              <!-- Play / Pause & Scrubber -->
+              <div class="flex items-center gap-3 w-full sm:w-auto justify-center flex-1 max-w-md mx-4">
+                <button id="autoPlayBtn" onclick="toggleAutoPlay()" class="p-2 rounded-full bg-warmGold-500 hover:bg-warmGold-400 text-charcoal-950 transition-transform active:scale-95 shadow-md flex-shrink-0 cursor-pointer" title="Auto Cinema Ambiance Tour">
+                  <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+                </button>
+                <div class="flex-1 flex flex-col gap-1">
+                  <div class="flex justify-between items-center text-[10px] text-parchment-400 font-mono">
+                    <span id="frameCounter">Frame 001 / 300</span>
+                    <span id="loadStatus">Buffering...</span>
+                  </div>
+                  <input type="range" id="frameScrubber" min="1" max="300" value="1" class="w-full h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer" oninput="onScrubberInput(this.value)" />
+                </div>
+              </div>
+
+              <!-- Lo-Fi Binaural Soundscape Toggle -->
+              <div class="flex items-center gap-3">
+                <button id="audioToggleBtn" onclick="toggleAudioSoundscape()" class="p-2 rounded-full text-xs font-medium bg-white/10 text-parchment-300 hover:bg-white/20 transition-colors flex items-center gap-1.5">
+                  <i data-lucide="volume-x" class="w-3.5 h-3.5"></i>
+                  <span class="hidden lg:inline text-[11px]">Cafe Soundscape</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- THREE PILLARS PREVIEW -->
+      <section class="py-24 px-6 sm:px-8 bg-parchment-100">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-terracotta-50 border border-terracotta-200 text-terracotta-700 text-xs font-semibold uppercase tracking-wider mb-4">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-terracotta-500"></i>
+              <span>The Repertwahr Ethos</span>
+            </div>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-charcoal-900 tracking-tight leading-tight">
+              Three Distinct Sanctuaries, <span class="italic font-light text-terracotta-600">One Rooftop</span>
+            </h2>
+            <p className="mt-4 text-base text-charcoal-600 leading-relaxed">
+              Designed as Lucknow's essential 'third space' between home and work — where literature, culinary craft, and open skies meet above Faizabad Road.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Pillar 1 -->
+            <div onclick="navigateTo('experience')" class="group bg-white rounded-3xl overflow-hidden border border-parchment-300/80 shadow-md hover:shadow-xl transition-all cursor-pointer flex flex-col">
+              <div class="relative h-64 overflow-hidden bg-forest-900">
+                <img src="./assets/ezgif-frame-035-6I2YHC6a.jpg" alt="Library Lounge" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950/80 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4">
+                  <span class="text-[11px] font-bold uppercase tracking-widest text-warmGold-300">Quiet Indoor Nook</span>
+                  <h3 class="font-serif text-2xl font-bold text-parchment-50">The Library Lounge</h3>
+                </div>
+              </div>
+              <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <p class="text-sm text-charcoal-600 leading-relaxed font-light">
+                  A sunlit sanctuary lined with shelves of contemporary fiction, poetry, drama, and philosophy. Perfect for remote working, afternoon reading, and slow-sipped coffee.
+                </p>
+                <div class="flex items-center text-xs font-semibold text-terracotta-600 gap-1.5">
+                  <span>Explore Library Details</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div onclick="navigateTo('experience')" class="group bg-white rounded-3xl overflow-hidden border border-parchment-300/80 shadow-md hover:shadow-xl transition-all cursor-pointer flex flex-col">
+              <div class="relative h-64 overflow-hidden bg-forest-900">
+                <img src="./assets/ezgif-frame-145-Dp7dxEob.jpg" alt="The Green Rooftop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950/80 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4">
+                  <span class="text-[11px] font-bold uppercase tracking-widest text-warmGold-300">Lush Courtyard Terrace</span>
+                  <h3 class="font-serif text-2xl font-bold text-parchment-50">The Green Rooftop</h3>
+                </div>
+              </div>
+              <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <p class="text-sm text-charcoal-600 leading-relaxed font-light">
+                  Shaded and open-air courtyard terrace seating surrounded by terracotta planters. As twilight falls, hundreds of golden fairy lights illuminate nighttime conversations.
+                </p>
+                <div class="flex items-center text-xs font-semibold text-terracotta-600 gap-1.5">
+                  <span>View Rooftop Ambiance</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div onclick="navigateTo('events')" class="group bg-white rounded-3xl overflow-hidden border border-parchment-300/80 shadow-md hover:shadow-xl transition-all cursor-pointer flex flex-col">
+              <div class="relative h-64 overflow-hidden bg-forest-900">
+                <img src="./assets/ezgif-frame-245-DmvLR5Vk.jpg" alt="The Repertwahr Stage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950/80 via-transparent to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4">
+                  <span class="text-[11px] font-bold uppercase tracking-widest text-warmGold-300">Live Performing Arts</span>
+                  <h3 class="font-serif text-2xl font-bold text-parchment-50">The Repertwahr Stage</h3>
+                </div>
+              </div>
+              <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <p class="text-sm text-charcoal-600 leading-relaxed font-light">
+                  Intimate live acoustic gigs, open mics, spoken word, and theatre circles inspired by the Repertwahr Performing Arts Festival. Live sound concludes at 11:00 PM.
+                </p>
+                <div class="flex items-center text-xs font-semibold text-terracotta-600 gap-1.5">
+                  <span>Browse Live Events</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED MENU HIGHLIGHTS -->
+      <section class="py-20 px-6 sm:px-8 bg-parchment-200/50">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-terracotta-100 text-terracotta-700 text-xs font-semibold uppercase tracking-wider mb-3">
+                <i data-lucide="utensils-crossed" class="w-3.5 h-3.5 text-terracotta-600"></i>
+                <span>Culinary Craft</span>
+              </div>
+              <h2 class="font-serif text-3xl sm:text-5xl font-bold text-charcoal-900 tracking-tight">
+                Featured Highlights From Our Kitchen
+              </h2>
+              <p class="text-sm text-charcoal-600 mt-2 max-w-xl">
+                Wok-tossed starters, hand-tossed sourdough pizza, Awadhi dum gravies, and tropical shakes. Average cost: INR 1,100 – 1,200 for two.
+              </p>
+            </div>
+            <button onclick="navigateTo('menu')" class="px-6 py-3 rounded-full bg-charcoal-900 hover:bg-charcoal-800 text-parchment-100 text-sm font-semibold transition-all flex items-center gap-2 cursor-pointer self-start md:self-auto">
+              <span>View Full Digital Menu</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-warmGold-400"></i>
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-3xl p-6 border border-parchment-300/80 shadow-xs flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-terracotta-50 text-terracotta-700 border border-terracotta-200 block mb-2 w-max">House Signature</span>
+                <h4 class="font-serif text-lg font-bold text-charcoal-900 mb-1">Repertwahr Cottage Cheese Chilli</h4>
+                <p class="text-xs text-charcoal-600 font-light mb-4">Signature wok-tossed cottage cheese cubes with bell peppers, shallots, and house dark chilli sauce.</p>
+              </div>
+              <div class="pt-4 border-t border-parchment-200 flex items-center justify-between">
+                <span class="font-mono font-bold text-lg text-charcoal-900">₹300</span>
+                <span class="text-xs text-emerald-700 font-bold">Veg</span>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 border border-parchment-300/80 shadow-xs flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-terracotta-50 text-terracotta-700 border border-terracotta-200 block mb-2 w-max">Wood-Fired</span>
+                <h4 class="font-serif text-lg font-bold text-charcoal-900 mb-1">Wood-Fired Peri Peri Pizza</h4>
+                <p class="text-xs text-charcoal-600 font-light mb-4">Crisp hand-stretched thin crust layered with spiced tomato sauce, mozzarella, and zesty peri peri dust.</p>
+              </div>
+              <div class="pt-4 border-t border-parchment-200 flex items-center justify-between">
+                <span class="font-mono font-bold text-lg text-charcoal-900">₹380</span>
+                <span class="text-xs text-emerald-700 font-bold">Veg</span>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 border border-parchment-300/80 shadow-xs flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-terracotta-50 text-terracotta-700 border border-terracotta-200 block mb-2 w-max">Awadhi Heritage</span>
+                <h4 class="font-serif text-lg font-bold text-charcoal-900 mb-1">Dum Ka Paneer</h4>
+                <p class="text-xs text-charcoal-600 font-light mb-4">Slow-cooked melt-in-the-mouth paneer in spiced clay-pot dum gravy with caramelized onions.</p>
+              </div>
+              <div class="pt-4 border-t border-parchment-200 flex items-center justify-between">
+                <span class="font-mono font-bold text-lg text-charcoal-900">₹340</span>
+                <span class="text-xs text-emerald-700 font-bold">Veg</span>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 border border-parchment-300/80 shadow-xs flex flex-col justify-between">
+              <div>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-forest-50 text-forest-700 border border-forest-200 block mb-2 w-max">Vegan Friendly</span>
+                <h4 class="font-serif text-lg font-bold text-charcoal-900 mb-1">Virgin Pina Colada</h4>
+                <p class="text-xs text-charcoal-600 font-light mb-4">Tropical blend of creamy coconut milk, fresh pineapple juice, and crushed ice.</p>
+              </div>
+              <div class="pt-4 border-t border-parchment-200 flex items-center justify-between">
+                <span class="font-mono font-bold text-lg text-charcoal-900">₹225</span>
+                <span class="text-xs text-emerald-700 font-bold">Vegan</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== PAGE 2: MENU ==================== -->
+    <div id="page-menu" class="page-section hidden pt-28 pb-32">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forest-900 text-warmGold-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            <i data-lucide="utensils-crossed" class="w-3.5 h-3.5"></i>
+            <span>Interactive Digital Menu</span>
+          </div>
+          <h1 class="font-serif text-4xl sm:text-6xl font-bold text-charcoal-900 tracking-tight mb-4">
+            Artisanal Dining Above the City
+          </h1>
+          <p class="text-sm sm:text-base text-charcoal-600 font-light">
+            No PDF downloads needed. Search dishes, filter by dietary requirements, or calculate your table bill. Average cost for two: ₹1,100 – ₹1,200.
+          </p>
+        </div>
+
+        <!-- Sticky Controls Bar -->
+        <div class="sticky top-16 z-30 bg-parchment-100/95 backdrop-blur-md pt-3 pb-4 mb-8 border-b border-parchment-300">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-4">
+            <div class="relative w-full md:max-w-md">
+              <i data-lucide="search" class="w-4 h-4 text-charcoal-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+              <input type="text" id="menuSearchInput" placeholder="Search dishes or ingredients (e.g. paneer, soup, basil)..." oninput="renderFilteredMenu()" class="w-full pl-10 pr-4 py-2.5 rounded-full bg-white border border-parchment-300 text-charcoal-900 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-terracotta-500 shadow-xs" />
+            </div>
+
+            <!-- Dietary Toggles -->
+            <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 scrollbar-none">
+              <span class="text-xs font-bold text-charcoal-600 uppercase tracking-wider mr-1 hidden sm:inline">Diet:</span>
+              <button onclick="setMenuDietFilter('all')" class="diet-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-charcoal-900 text-white shadow-xs" data-diet="all">All</button>
+              <button onclick="setMenuDietFilter('veg')" class="diet-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-emerald-800 border border-emerald-200" data-diet="veg">Veg Only</button>
+              <button onclick="setMenuDietFilter('non-veg')" class="diet-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-rose-800 border border-rose-200" data-diet="non-veg">Non-Veg</button>
+              <button onclick="setMenuDietFilter('vegan')" class="diet-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-forest-800 border border-forest-300" data-diet="vegan">🌱 Vegan Options</button>
+            </div>
+          </div>
+
+          <!-- Category Pills -->
+          <div id="categoryPillsContainer" class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+
+        <!-- Menu Cards Grid -->
+        <div id="menuCardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Injected via JS -->
+        </div>
+
+        <!-- Floating Table Bill Estimator Pill -->
+        <div id="floatingBillPill" class="fixed bottom-20 lg:bottom-8 right-6 z-40 hidden">
+          <button onclick="toggleBillDrawer()" class="px-6 py-3.5 rounded-full bg-forest-900 hover:bg-forest-800 text-parchment-50 font-semibold text-sm shadow-2xl border border-warmGold-500/40 flex items-center gap-3 transform hover:scale-105 transition-all cursor-pointer backdrop-blur-md">
+            <div id="billPillCount" class="w-6 h-6 rounded-full bg-warmGold-500 text-charcoal-950 flex items-center justify-center font-bold text-xs">0</div>
+            <span>Table Bill Estimator</span>
+            <span id="billPillTotal" class="font-mono text-warmGold-400 font-bold ml-1">₹0</span>
+          </button>
+        </div>
+
+        <!-- Bill Drawer -->
+        <div id="billDrawer" class="fixed inset-0 z-50 hidden">
+          <div onclick="toggleBillDrawer()" class="fixed inset-0 bg-charcoal-950/60 backdrop-blur-sm"></div>
+          <div class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-parchment-50 h-full shadow-2xl flex flex-col z-10 p-6 overflow-y-auto">
+            <div class="flex items-center justify-between pb-4 border-b border-parchment-300">
+              <h3 class="font-serif text-xl font-bold text-charcoal-900">Your Table Bill Estimator</h3>
+              <button onclick="toggleBillDrawer()" class="p-2 rounded-full hover:bg-parchment-200"><i data-lucide="x" class="w-5 h-5"></i></button>
+            </div>
+            <div id="billDrawerItems" class="flex-1 py-6 space-y-3"></div>
+            <div class="pt-4 border-t border-parchment-300 space-y-2 text-sm text-charcoal-700">
+              <div class="flex justify-between"><span>Subtotal</span><span id="drawerSubtotal" class="font-mono">₹0</span></div>
+              <div class="flex justify-between text-xs text-charcoal-500"><span>GST (5%)</span><span id="drawerGst" class="font-mono">₹0</span></div>
+              <div class="flex justify-between font-serif text-lg font-bold text-charcoal-900 pt-2 border-t border-parchment-300">
+                <span>Estimated Total</span><span id="drawerTotal" class="font-mono text-terracotta-700">₹0</span>
+              </div>
+              <button onclick="toggleBillDrawer(); openReservationModal();" class="w-full mt-4 py-3 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-sm shadow-warm">
+                Book Table with this Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 3: THE EXPERIENCE ==================== -->
+    <div id="page-experience" class="page-section hidden pt-28 pb-32">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-terracotta-50 border border-terracotta-200 text-terracotta-700 text-xs font-semibold uppercase tracking-wider mb-4">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-terracotta-500"></i>
+            <span>The Repertwahr Legacy</span>
+          </div>
+          <h1 class="font-serif text-4xl sm:text-6xl font-bold text-charcoal-900 tracking-tight mb-6">
+            Where Literature &amp; Stage Meet <span class="text-terracotta-600 italic">Above the City</span>
+          </h1>
+          <p class="text-base sm:text-lg text-charcoal-700 font-light leading-relaxed">
+            Born out of the creative ethos of the Repertwahr performing arts and theatre festival community in Lucknow, Cafe Repertwahr was created as a genuine 'third space' where literature, theatre, independent acoustic music, and culinary comfort intersect.
+          </p>
+        </div>
+
+        <!-- Spatial Zones Tabs -->
+        <div class="flex items-center justify-center gap-3 mb-10 overflow-x-auto pb-2">
+          <button onclick="switchZone('library')" id="zoneTab-library" class="zone-tab px-5 py-3 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-2 bg-forest-900 text-parchment-100 shadow-md">
+            <i data-lucide="book-open" class="w-4 h-4 text-warmGold-400"></i>
+            <span>The Reading Library</span>
+          </button>
+          <button onclick="switchZone('rooftop')" id="zoneTab-rooftop" class="zone-tab px-5 py-3 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-2 bg-white text-charcoal-700 border border-parchment-300">
+            <i data-lucide="moon" class="w-4 h-4 text-charcoal-500"></i>
+            <span>The Green Rooftop</span>
+          </button>
+          <button onclick="switchZone('culture')" id="zoneTab-culture" class="zone-tab px-5 py-3 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-2 bg-white text-charcoal-700 border border-parchment-300">
+            <i data-lucide="sparkles" class="w-4 h-4 text-charcoal-500"></i>
+            <span>Art &amp; Community Stage</span>
+          </button>
+        </div>
+
+        <!-- Zone Content Split Screen -->
+        <div id="zoneDisplayCard" class="bg-white rounded-3xl border border-parchment-300/80 shadow-lg overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0 mb-20">
+          <!-- Injected via JS -->
+        </div>
+
+        <!-- Owner Story Callout Block [Owner-Approved Brand Note] -->
+        <div class="max-w-4xl mx-auto bg-forest-900 rounded-3xl text-parchment-100 p-8 sm:p-12 shadow-2xl relative border border-forest-800 mb-20">
+          <div class="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-forest-800">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-800 text-warmGold-400 text-xs font-bold uppercase tracking-wider border border-warmGold-500/20">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+              <span>[Owner-Approved Brand Note]</span>
+            </div>
+            <button onclick="toggleEditBrandNote()" id="editNoteBtn" class="text-xs text-warmGold-400 hover:text-warmGold-300 flex items-center gap-1.5 cursor-pointer">
+              <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
+              <span>Edit Note</span>
+            </button>
+          </div>
+          <blockquote id="brandNoteText" class="font-serif italic text-lg sm:text-2xl leading-relaxed text-parchment-100 font-light mb-6">
+            "When we conceptualized Cafe Repertwahr, we didn't just want another eatery in Lucknow. We wanted a living, breathing third space that honors the pulse of our Repertwahr theatre festival movement. A place where you can sit undisturbed for hours with a novel, strike up a conversation with an unfamiliar artist over pour-over coffee, and watch dusk turn into golden fairy lights above Faizabad Road. Whether you are writing your first script or sharing a meal with old friends, our rooftop is your sanctuary."
+          </blockquote>
+          <textarea id="brandNoteInput" class="w-full p-4 rounded-2xl bg-forest-950 border border-forest-700 text-parchment-100 text-sm font-serif leading-relaxed hidden" rows="5"></textarea>
+          <div class="flex items-center gap-3 pt-2">
+            <div class="w-11 h-11 rounded-full bg-warmGold-500 text-charcoal-950 flex items-center justify-center font-serif font-bold text-lg">CR</div>
+            <div>
+              <h4 class="font-bold text-sm text-parchment-50">Management &amp; Curators</h4>
+              <p class="text-xs text-warmGold-400">Cafe Repertwahr &amp; Repertwahr Festival Movement</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center max-w-xl mx-auto">
+          <p class="text-xs text-charcoal-600 mb-2">Want to learn more about the theatre movement that inspired this cafe?</p>
+          <a href="https://repertwahrfestival.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-terracotta-600 hover:text-terracotta-700">
+            <span>Visit Official Repertwahr Festival Website</span>
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 4: EVENTS ==================== -->
+    <div id="page-events" class="page-section hidden pt-28 pb-32">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forest-900 text-warmGold-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            <i data-lucide="music" class="w-3.5 h-3.5"></i>
+            <span>Cultural &amp; Performing Stage</span>
+          </div>
+          <h1 class="font-serif text-4xl sm:text-6xl font-bold text-charcoal-900 tracking-tight mb-4">
+            Live Performances &amp; Gigs
+          </h1>
+          <p class="text-sm text-charcoal-600 font-light">
+            Indie acoustic sessions, spoken word poetry circles, and intimate theatre readings under starlit skies.
+          </p>
+          <div class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-amber-50 border border-amber-300/80 text-amber-900 text-xs font-medium max-w-xl text-left shadow-xs">
+            <i data-lucide="shield-alert" class="w-4 h-4 text-amber-700 flex-shrink-0"></i>
+            <span><strong>Venue Sound Policy:</strong> In compliance with local residential &amp; municipal regulations, all live outdoor music strictly concludes before 11:00 PM.</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 pb-4 border-b border-parchment-300">
+          <div id="eventsFilterContainer" class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-2 sm:pb-0 scrollbar-none">
+            <!-- Filter buttons injected via JS -->
+          </div>
+          <button onclick="openOwnerCMS()" class="flex items-center gap-2 px-4 py-2 rounded-full bg-forest-900 text-warmGold-400 hover:bg-forest-800 text-xs font-semibold shadow-sm flex-shrink-0 cursor-pointer">
+            <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+            <span>Owner Quick-Manage Mode</span>
+          </button>
+        </div>
+
+        <!-- Upcoming Performances Grid -->
+        <div id="eventsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+          <!-- Injected via JS -->
+        </div>
+
+        <!-- Private Gatherings Banner -->
+        <div class="rounded-3xl bg-forest-900 text-parchment-100 p-8 sm:p-12 shadow-2xl relative border border-forest-800">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div class="lg:col-span-8 space-y-3">
+              <h3 class="font-serif text-3xl sm:text-4xl font-bold leading-tight text-parchment-50">
+                Host Your Private Celebration or Cultural Soirée
+              </h3>
+              <p class="text-sm text-parchment-300 leading-relaxed font-light">
+                Accommodating 80 guests seated (up to 150 guests floating). We host curated birthday evenings, acoustic album releases, poetry circles, book launches, and corporate mixers with tailored banquet menus.
+              </p>
+              <div class="flex flex-wrap gap-4 text-xs text-warmGold-300 pt-2 font-medium">
+                <span>✓ Banquet packages starting around ₹750 – ₹800 per plate</span>
+                <span>✓ Dedicated sound &amp; stage assistance</span>
+              </div>
+            </div>
+            <div class="lg:col-span-4 flex flex-col gap-3">
+              <a href="https://wa.me/919795755850?text=Hi%2C%20I%20would%20like%20to%20inquire%20about%20hosting%20a%20private%20event%20at%20Cafe%20Repertwahr." target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-6 rounded-full bg-warmGold-500 hover:bg-warmGold-400 text-charcoal-950 font-bold text-sm text-center transition-all shadow-md flex items-center justify-center gap-2">
+                <i data-lucide="message-circle" class="w-4 h-4 text-emerald-800"></i>
+                <span>WhatsApp Events (+91 97957 55850)</span>
+              </a>
+              <a href="tel:+919795755850" class="w-full py-3 px-6 rounded-full bg-forest-800 hover:bg-forest-700 text-parchment-100 font-semibold text-xs text-center border border-forest-600 transition-all flex items-center justify-center gap-2">
+                <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                <span>Call Events Team</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 5: GALLERY ==================== -->
+    <div id="page-gallery" class="page-section hidden pt-28 pb-32">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-terracotta-50 border border-terracotta-200 text-terracotta-700 text-xs font-semibold uppercase tracking-wider mb-4">
+            <i data-lucide="image" class="w-3.5 h-3.5 text-terracotta-600"></i>
+            <span>Visual Archive</span>
+          </div>
+          <h1 class="font-serif text-4xl sm:text-6xl font-bold text-charcoal-900 tracking-tight mb-4">
+            Moments Above Faizabad Road
+          </h1>
+          <p class="text-sm text-charcoal-600 font-light">
+            Glimpses into our sunlit library, open-air terrace dining, fairy-light evenings, and artisanal kitchen creations.
+          </p>
+        </div>
+
+        <!-- Filter tabs -->
+        <div id="galleryFilterContainer" class="flex items-center justify-center gap-2 overflow-x-auto pb-4 mb-12 scrollbar-none">
+          <!-- Injected via JS -->
+        </div>
+
+        <!-- Grid with locked aspect ratio containers -->
+        <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+          <!-- Injected via JS -->
+        </div>
+
+        <div class="p-6 rounded-3xl bg-parchment-200/70 border border-parchment-300 max-w-2xl mx-auto text-center text-xs text-charcoal-600 space-y-1">
+          <p class="font-bold text-charcoal-800">[Owner-Approved Asset Management]</p>
+          <p>All media containers are locked to standardized aspect ratios (16:9 / 4:3) so replacing placeholders with licensed photography requires zero CSS adjustments.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== PAGE 6: VISIT & RESERVATIONS ==================== -->
+    <div id="page-visit" class="page-section hidden pt-28 pb-32">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-forest-900 text-warmGold-400 text-xs font-semibold uppercase tracking-wider mb-4">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+            <span>Visit &amp; Reservations</span>
+          </div>
+          <h1 class="font-serif text-4xl sm:text-6xl font-bold text-charcoal-900 tracking-tight mb-4">
+            Plan Your Gathering With Us
+          </h1>
+          <p class="text-sm text-charcoal-600 font-light">
+            Located on Faizabad Road in Indira Nagar, Lucknow. Book your table online, get instant WhatsApp confirmations, or explore transport and parking guidelines.
+          </p>
+        </div>
+
+        <!-- Form + Location Hub Split-screen -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-24 items-start">
+          <!-- Form (7 cols) -->
+          <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 border border-parchment-300 shadow-lg">
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-charcoal-900 mb-1">Reserve a Table</h2>
+            <p class="text-xs text-charcoal-500 mb-6 pb-6 border-b border-parchment-200">Instant confirmation via WhatsApp or phone callback</p>
+
+            <form id="visitReservationForm" onsubmit="handleVisitFormSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1.5">Full Name *</label>
+                  <input type="text" id="visitName" required placeholder="e.g. Vikram Malhotra" class="w-full px-4 py-2.5 rounded-xl border border-parchment-300 text-sm focus:ring-2 focus:ring-terracotta-500 focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1.5">Phone Number *</label>
+                  <input type="tel" id="visitPhone" required placeholder="+91 98765 43210" class="w-full px-4 py-2.5 rounded-xl border border-parchment-300 text-sm focus:ring-2 focus:ring-terracotta-500 focus:outline-none" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1.5">Date *</label>
+                  <input type="date" id="visitDate" required class="w-full px-4 py-2.5 rounded-xl border border-parchment-300 text-sm focus:ring-2 focus:ring-terracotta-500 focus:outline-none" />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1.5">Time Slot (12 PM - 10 PM) *</label>
+                  <select id="visitTime" class="w-full px-4 py-2.5 rounded-xl border border-parchment-300 text-sm focus:ring-2 focus:ring-terracotta-500 focus:outline-none">
+                    <option value="12:00 PM">12:00 PM</option><option value="01:00 PM">01:00 PM</option><option value="02:00 PM">02:00 PM</option>
+                    <option value="04:00 PM">04:00 PM</option><option value="06:00 PM">06:00 PM</option><option value="07:30 PM" selected>07:30 PM</option>
+                    <option value="08:30 PM">08:30 PM</option><option value="09:30 PM">09:30 PM</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1.5">Party Size</label>
+                  <select id="visitParty" class="w-full px-4 py-2.5 rounded-xl border border-parchment-300 text-sm focus:ring-2 focus:ring-terracotta-500 focus:outline-none">
+                    <option value="1 Person">1 Person (Solo Reader / Work)</option>
+                    <option value="2 People" selected>2 People (Couple / Friends)</option>
+                    <option value="3-4 People">3 - 4 People (Small Table)</option>
+                    <option value="5-8 People">5 - 8 People (Family Group)</option>
+                    <option value="8+ People">8+ People (Large Gathering)</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1.5">Seating Preference</label>
+                  <select id="visitSeating" class="w-full px-4 py-2.5 rounded-xl border border-parchment-300 text-sm focus:ring-2 focus:ring-terracotta-500 focus:outline-none">
+                    <option value="Open-Air Patio" selected>Open-Air Patio (Fairy Lights)</option>
+                    <option value="Shaded Rooftop">Shaded Rooftop Terrace</option>
+                    <option value="Indoor Library">Indoor Library Lounge (AC)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1.5">Special Requests (Optional)</label>
+                <textarea id="visitNotes" rows="2" placeholder="e.g. Quiet corner, anniversary celebration..." class="w-full px-4 py-2 rounded-xl border border-parchment-300 text-sm focus:ring-2 focus:ring-terracotta-500 focus:outline-none"></textarea>
+              </div>
+
+              <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <button type="submit" class="w-full py-3.5 px-4 rounded-xl bg-forest-900 hover:bg-forest-800 text-parchment-100 font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-forest cursor-pointer">
+                  <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>Confirm via WhatsApp</span>
+                </button>
+                <button type="button" onclick="handleVisitCallback(event)" class="w-full py-3.5 px-4 rounded-xl bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-warm cursor-pointer">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                  <span>Request Callback</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Location & Contact Hub (5 cols) -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="bg-forest-900 rounded-3xl p-6 sm:p-8 text-parchment-100 shadow-xl border border-forest-800">
+              <h3 class="font-serif text-2xl font-bold mb-4 text-parchment-50">Location &amp; Landmark Hub</h3>
+              <div class="space-y-4 text-xs sm:text-sm text-parchment-300 font-light">
+                <div class="flex items-start gap-3">
+                  <i data-lucide="map-pin" class="w-5 h-5 text-terracotta-400 flex-shrink-0 mt-0.5"></i>
+                  <div>
+                    <strong class="block text-parchment-100 font-semibold text-sm">Full Address:</strong>
+                    <span>3rd Floor, Kala Niketan, A2, Faizabad Road, Above Khosla Electronics, Maruti Puram, Rabindra Palli Colony, Indira Nagar, Lucknow, UP 226016.</span>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i data-lucide="navigation" class="w-5 h-5 text-warmGold-400 flex-shrink-0 mt-0.5"></i>
+                  <div>
+                    <strong class="block text-parchment-100 font-semibold text-sm">Landmarks &amp; Metro:</strong>
+                    <span>Opp. Lekhraj Khajana; <strong>1.6 km from Bhootnath Market Metro Station</strong>.</span>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <i data-lucide="clock" class="w-5 h-5 text-terracotta-400 flex-shrink-0 mt-0.5"></i>
+                  <div>
+                    <strong class="block text-parchment-100 font-semibold text-sm">Opening Hours:</strong>
+                    <span>Monday to Sunday: 12:00 PM – 11:00 PM</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-6 border-t border-forest-800 space-y-2.5">
+                <a href="tel:+919170575793" class="w-full py-2.5 px-4 rounded-xl bg-forest-800 hover:bg-forest-700 text-parchment-100 font-semibold text-xs flex items-center justify-center gap-2 border border-forest-700 transition-colors">
+                  <i data-lucide="phone" class="w-4 h-4 text-terracotta-400"></i>
+                  <span>Call Cafe (+91 91705 75793)</span>
+                </a>
+                <a href="https://wa.me/919170575793" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-forest-800 hover:bg-forest-700 text-parchment-100 font-semibold text-xs flex items-center justify-center gap-2 border border-forest-700 transition-colors">
+                  <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+                  <span>WhatsApp Us Directly</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Embedded Map -->
+            <div class="bg-white rounded-3xl p-3 border border-parchment-300 shadow-md overflow-hidden">
+              <div class="relative h-64 rounded-2xl overflow-hidden bg-parchment-200">
+                <iframe title="Location Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.0435948924157!2d80.98818817616162!3d26.870381661899066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be2c2c0199999%3A0x9a84b5b722ad9f48!2sKala%20Niketan%2C%20Faizabad%20Rd%2C%20Lucknow!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" class="w-full h-full border-0" loading="lazy"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Parking, Accessibility & Payment Details -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+          <div class="bg-white rounded-3xl p-6 border border-parchment-300 shadow-sm">
+            <h4 class="font-serif text-xl font-bold text-charcoal-900 mb-2">Parking Information</h4>
+            <p class="text-xs text-charcoal-600 leading-relaxed font-light">On-site parking lot and free street parking available along Kala Niketan. Note that peak weekend evenings get busy; ride-sharing or metro access is recommended.</p>
+          </div>
+          <div class="bg-white rounded-3xl p-6 border border-amber-300 bg-amber-50/20 shadow-sm">
+            <h4 class="font-serif text-xl font-bold text-charcoal-900 mb-2">Accessibility Disclosure</h4>
+            <p class="text-xs text-charcoal-600 leading-relaxed font-light">Ground parking is accessible. However, the cafe is located on the <strong>3rd floor</strong> and currently does not have an elevator / wheelchair-accessible entrance. Staircase access required.</p>
+          </div>
+          <div class="bg-white rounded-3xl p-6 border border-parchment-300 shadow-sm">
+            <h4 class="font-serif text-xl font-bold text-charcoal-900 mb-2">Payments Accepted</h4>
+            <p class="text-xs text-charcoal-600 leading-relaxed font-light">We accept UPI (Google Pay, PhonePe, Paytm), NFC Mobile Payments, Credit Cards, Debit Cards, and Cash.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-10">
+            <h2 class="font-serif text-3xl font-bold text-charcoal-900">Frequently Asked Questions</h2>
+          </div>
+          <div id="faqAccordionContainer" class="space-y-3">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-charcoal-950 text-parchment-200 border-t border-forest-900/60 pt-16 pb-24 lg:pb-16">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-14 border-b border-white/10">
+        <div class="lg:col-span-4 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-forest-900 border border-warmGold-400/40 flex items-center justify-center text-warmGold-400">
+              <i data-lucide="book-open" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-serif text-2xl font-bold text-parchment-50">Cafe Repertwahr</h3>
+              <p class="text-[10px] text-terracotta-400 font-bold uppercase tracking-widest">Art • Literature • Rooftop</p>
+            </div>
+          </div>
+          <p class="text-sm text-parchment-300 leading-relaxed font-light">
+            Where literature, live art, and culinary craft meet above the city. Born out of the creative ethos of the Repertwahr theatre and performing arts festival movement in Lucknow.
+          </p>
+          <a href="https://repertwahrfestival.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-warmGold-400 hover:text-warmGold-300 font-medium">
+            <span>Official Partner of Repertwahr Performing Arts Festival</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-warmGold-400">Explore Pages</h4>
+          <ul class="space-y-2 text-sm text-parchment-300">
+            <li><a href="#home" onclick="navigateTo('home'); return false;" class="hover:text-terracotta-400">Home</a></li>
+            <li><a href="#menu" onclick="navigateTo('menu'); return false;" class="hover:text-terracotta-400">Digital Menu (INR)</a></li>
+            <li><a href="#experience" onclick="navigateTo('experience'); return false;" class="hover:text-terracotta-400">The Experience</a></li>
+            <li><a href="#events" onclick="navigateTo('events'); return false;" class="hover:text-terracotta-400">Live Performances</a></li>
+            <li><a href="#gallery" onclick="navigateTo('gallery'); return false;" class="hover:text-terracotta-400">Photo Gallery</a></li>
+            <li><a href="#visit" onclick="navigateTo('visit'); return false;" class="hover:text-terracotta-400">Visit &amp; Reservations</a></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-warmGold-400">Hours &amp; Location</h4>
+          <div class="space-y-3 text-xs text-parchment-300">
+            <div>
+              <strong class="block text-parchment-100 font-semibold">Open Daily</strong>
+              <span>12:00 PM – 11:00 PM</span>
+            </div>
+            <div>
+              <strong class="block text-parchment-100 font-semibold">3rd Floor, Kala Niketan</strong>
+              <span>Faizabad Road, Maruti Puram, Indira Nagar, Lucknow UP 226016</span>
+              <span class="block text-terracotta-400 mt-1">1.6 km from Bhootnath Metro</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-warmGold-400">Reservations &amp; Enquiries</h4>
+          <div class="space-y-2 text-xs text-parchment-300">
+            <div>
+              <span class="text-[11px] uppercase tracking-wider text-parchment-400 block font-semibold">Cafe Front Desk</span>
+              <a href="tel:+919170575793" class="text-sm font-semibold text-parchment-100 hover:text-warmGold-400">+91 91705 75793</a>
+            </div>
+            <div>
+              <span class="text-[11px] uppercase tracking-wider text-parchment-400 block font-semibold">Private Gatherings</span>
+              <a href="tel:+919795755850" class="text-sm font-semibold text-parchment-100 hover:text-warmGold-400">+91 97957 55850</a>
+            </div>
+            <button onclick="openReservationModal()" class="w-full mt-2 py-2.5 rounded-xl bg-terracotta-500 hover:bg-terracotta-600 text-white font-medium text-xs shadow-warm">
+              Book a Table Now
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-parchment-400">
+        <div>© 2026 Cafe Repertwahr. All rights reserved. Lucknow, India.</div>
+        <div class="flex items-center gap-4">
+          <button onclick="openOwnerCMS()" class="inline-flex items-center gap-1.5 text-parchment-400 hover:text-warmGold-400 transition-colors text-xs cursor-pointer">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+            <span>Owner Manage Events</span>
+          </button>
+          <span>•</span>
+          <span class="text-[11px]">Avg ₹1,100 - ₹1,200 for two</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MOBILE STICKY BOTTOM ACTION BAR ==================== -->
+  <aside aria-label="Quick Actions" class="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-parchment-50/95 backdrop-blur-xl border-t border-parchment-300 px-4 py-2.5 shadow-lg">
+    <div class="max-w-md mx-auto grid grid-cols-4 gap-2 text-center">
+      <button onclick="navigateTo('menu')" class="flex flex-col items-center justify-center text-charcoal-700 hover:text-terracotta-600">
+        <i data-lucide="utensils-crossed" class="w-5 h-5 mb-1"></i>
+        <span class="text-[11px]">Menu</span>
+      </button>
+      <button onclick="openReservationModal()" class="flex flex-col items-center justify-center text-terracotta-600 font-bold">
+        <div class="w-7 h-7 rounded-full bg-terracotta-500 text-white flex items-center justify-center shadow-sm -mt-3.5 border-2 border-parchment-50">
+          <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+        </div>
+        <span class="text-[11px] mt-0.5">Book</span>
+      </button>
+      <a href="https://wa.me/919170575793?text=Hi%20Cafe%20Repertwahr%2C%20I%20would%20like%20to%20inquire%20about%20a%20table%20reservation." target="_blank" rel="noopener noreferrer" class="flex flex-col items-center justify-center text-charcoal-700">
+        <i data-lucide="message-circle" class="w-5 h-5 mb-1 text-emerald-600"></i>
+        <span class="text-[11px]">WhatsApp</span>
+      </a>
+      <a href="tel:+919170575793" class="flex flex-col items-center justify-center text-charcoal-700 hover:text-terracotta-600">
+        <i data-lucide="phone" class="w-5 h-5 mb-1 text-terracotta-600"></i>
+        <span class="text-[11px]">Call</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ==================== RESERVATION MODAL ==================== -->
+  <div id="reservationModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div onclick="closeReservationModal()" class="fixed inset-0 bg-charcoal-950/75 backdrop-blur-md"></div>
+    <div class="relative w-full max-w-xl bg-parchment-100 rounded-3xl border border-terracotta-500/20 shadow-2xl overflow-hidden z-10 my-8">
+      <div class="bg-forest-900 px-6 sm:px-8 py-5 text-parchment-100 flex items-center justify-between border-b border-forest-800">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-forest-800 border border-warmGold-400/40 flex items-center justify-center text-warmGold-400">
+            <i data-lucide="calendar" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold tracking-tight">Reserve Your Table</h3>
+            <p class="text-xs text-parchment-300">Cafe Repertwahr • Faizabad Road, Lucknow</p>
+          </div>
+        </div>
+        <button onclick="closeReservationModal()" class="p-2 rounded-full hover:bg-forest-800 text-parchment-300 hover:text-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-6 sm:p-8">
+        <form onsubmit="handleModalReserveSubmit(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1.5">Your Name *</label>
+              <input type="text" id="modalName" required placeholder="e.g. Ananya Verma" class="w-full px-4 py-2.5 rounded-xl border border-parchment-300 bg-white text-sm focus:ring-2 focus:ring-terracotta-500 focus:outline-none" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1.5">Phone / WhatsApp *</label>
+              <input type="tel" id="modalPhone" required placeholder="+91 98765 43210" class="w-full px-4 py-2.5 rounded-xl border border-parchment-300 bg-white text-sm focus:ring-2 focus:ring-terracotta-500 focus:outline-none" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1.5">Reservation Date *</label>
+              <input type="date" id="modalDate" required class="w-full px-4 py-2.5 rounded-xl border border-parchment-300 bg-white text-sm focus:ring-2 focus:ring-terracotta-500 focus:outline-none" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1.5">Time Slot (12 PM - 10 PM) *</label>
+              <select id="modalTime" class="w-full px-4 py-2.5 rounded-xl border border-parchment-300 bg-white text-sm focus:ring-2 focus:ring-terracotta-500 focus:outline-none">
+                <option value="12:00 PM">12:00 PM</option><option value="01:00 PM">01:00 PM</option><option value="02:30 PM">02:30 PM</option>
+                <option value="05:00 PM">05:00 PM</option><option value="07:00 PM" selected>07:00 PM</option><option value="08:00 PM">08:00 PM</option>
+                <option value="09:00 PM">09:00 PM</option><option value="10:00 PM">10:00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1.5">Party Size</label>
+              <select id="modalParty" class="w-full px-4 py-2.5 rounded-xl border border-parchment-300 bg-white text-sm focus:ring-2 focus:ring-terracotta-500 focus:outline-none">
+                <option value="1 Person">1 Person (Solo Reader)</option>
+                <option value="2 People" selected>2 People (Couple / Friends)</option>
+                <option value="3-4 People">3 - 4 People (Small Gathering)</option>
+                <option value="5-8 People">5 - 8 People (Family Group)</option>
+                <option value="8+ People">8+ People (Private Group)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1.5">Seating Preference</label>
+              <select id="modalSeating" class="w-full px-4 py-2.5 rounded-xl border border-parchment-300 bg-white text-sm focus:ring-2 focus:ring-terracotta-500 focus:outline-none">
+                <option value="Open-Air Patio" selected>Open-Air Patio (Fairy Lights)</option>
+                <option value="Shaded Rooftop">Shaded Rooftop</option>
+                <option value="Indoor Library">Indoor Library Lounge (AC)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="pt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button type="submit" class="w-full py-3 px-4 rounded-xl bg-forest-900 hover:bg-forest-800 text-parchment-100 font-semibold text-sm flex items-center justify-center gap-2 shadow-forest">
+              <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+              <span>Confirm via WhatsApp</span>
+            </button>
+            <button type="button" onclick="handleModalCallback()" class="w-full py-3 px-4 rounded-xl bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-warm">
+              <i data-lucide="phone" class="w-4 h-4"></i>
+              <span>Request Callback</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== OWNER CMS DRAWER ==================== -->
+  <div id="ownerDrawer" class="fixed inset-0 z-50 hidden flex justify-end">
+    <div onclick="closeOwnerCMS()" class="fixed inset-0 bg-charcoal-950/70 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-xl bg-parchment-50 h-full shadow-2xl flex flex-col z-10 overflow-y-auto">
+      <div class="bg-forest-900 p-6 text-parchment-100 flex items-center justify-between border-b border-forest-800">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-forest-800 text-warmGold-400 flex items-center justify-center">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-serif text-xl font-bold">Owner Event Manager</h3>
+            <p class="text-xs text-parchment-300">CMS Simulation (Passcode: 1234)</p>
+          </div>
+        </div>
+        <button onclick="closeOwnerCMS()" class="p-2 text-parchment-300 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+
+      <div class="p-6 flex-1">
+        <div id="ownerAuthBlock" class="py-8 max-w-sm mx-auto text-center">
+          <div class="w-14 h-14 rounded-full bg-terracotta-100 text-terracotta-600 mx-auto flex items-center justify-center mb-4">
+            <i data-lucide="lock" class="w-7 h-7"></i>
+          </div>
+          <h4 class="font-serif text-xl font-bold text-charcoal-900 mb-2">Management Authentication</h4>
+          <p class="text-xs text-charcoal-600 mb-6">Enter passcode to add or manage live gigs (Hint: 1234 or repertwahr)</p>
+          <input type="password" id="ownerPasscodeInput" placeholder="Passcode (1234)" class="w-full px-4 py-2.5 rounded-xl border border-parchment-300 bg-white text-center font-mono text-base tracking-widest mb-4" />
+          <button onclick="authenticateOwner()" class="w-full py-2.5 rounded-xl bg-terracotta-500 text-white font-medium text-sm">Unlock CMS</button>
+          <p id="ownerAuthError" class="text-red-600 text-xs mt-2 hidden"></p>
+        </div>
+
+        <div id="ownerManageBlock" class="space-y-6 hidden">
+          <div class="p-5 rounded-2xl bg-white border border-parchment-300">
+            <h4 class="font-serif font-bold text-charcoal-900 text-base mb-3">+ Publish New Event</h4>
+            <form onsubmit="handleCreateEventSubmit(event)" class="space-y-3">
+              <input type="text" id="newEventTitle" required placeholder="Event Title *" class="w-full px-3 py-2 text-sm border border-parchment-300 rounded-lg" />
+              <div class="grid grid-cols-2 gap-3">
+                <select id="newEventCategory" class="px-3 py-2 text-sm border border-parchment-300 rounded-lg">
+                  <option value="Live Music">Live Music</option>
+                  <option value="Open Mic">Open Mic</option>
+                  <option value="Theatre/Storytelling">Theatre/Storytelling</option>
+                  <option value="Book Reading">Book Reading</option>
+                </select>
+                <input type="text" id="newEventDate" required placeholder="e.g. Friday, Nov 6" class="px-3 py-2 text-sm border border-parchment-300 rounded-lg" />
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <input type="text" id="newEventTime" placeholder="7:30 PM - 10:00 PM" class="px-3 py-2 text-sm border border-parchment-300 rounded-lg" />
+                <input type="text" id="newEventPrice" placeholder="Free Entry or ₹200" class="px-3 py-2 text-sm border border-parchment-300 rounded-lg" />
+              </div>
+              <textarea id="newEventDesc" placeholder="Description..." rows="2" class="w-full px-3 py-2 text-sm border border-parchment-300 rounded-lg"></textarea>
+              <button type="submit" class="w-full py-2.5 rounded-xl bg-forest-900 text-parchment-100 font-semibold text-xs">+ Add to Live Lineup</button>
+            </form>
+          </div>
+
+          <div>
+            <h4 class="font-serif font-bold text-charcoal-900 text-base mb-3">Active Schedule</h4>
+            <div id="ownerEventsList" class="space-y-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== GALLERY LIGHTBOX ==================== -->
+  <div id="galleryLightbox" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-charcoal-950/95 backdrop-blur-xl">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white z-20"><i data-lucide="x" class="w-6 h-6"></i></button>
+    <button onclick="prevLightboxImage()" class="absolute left-4 sm:left-8 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white z-20"><i data-lucide="chevron-left" class="w-6 h-6"></i></button>
+    <button onclick="nextLightboxImage()" class="absolute right-4 sm:right-8 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white z-20"><i data-lucide="chevron-right" class="w-6 h-6"></i></button>
+    <div class="max-w-5xl w-full flex flex-col items-center">
+      <div class="relative max-h-[75vh] w-full flex items-center justify-center overflow-hidden rounded-2xl">
+        <img id="lightboxImg" src="" alt="Full view" class="max-h-[75vh] max-w-full object-contain rounded-2xl shadow-2xl" />
+      </div>
+      <div class="text-center mt-6 text-parchment-100 max-w-xl">
+        <span id="lightboxTag" class="text-[10px] font-bold uppercase tracking-widest text-warmGold-400 block mb-1"></span>
+        <h3 id="lightboxTitle" class="font-serif text-2xl font-bold mb-1"></h3>
+        <p id="lightboxSubtitle" class="text-xs sm:text-sm text-parchment-300 font-light"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== APPLICATION SCRIPT ==================== -->
+  <script>
+    // --- VERIFIED DATASETS ---
+    const TOTAL_FRAMES = 300;
+
+    const MENU_CATEGORIES = [
+      { id: 'all', label: 'All Items' },
+      { id: 'soups', label: 'Soups' },
+      { id: 'starters', label: 'Starters & Chinese' },
+      { id: 'pasta', label: 'Pasta & Continental' },
+      { id: 'north-indian', label: 'North Indian & Breads' },
+      { id: 'shakes', label: 'Shakes & Smoothies' },
+      { id: 'coffee', label: 'Coffee & Mocktails' },
+    ];
+
+    const MENU_ITEMS = [
+      // Soups
+      { id: 'soup-1', name: 'Tomato Basil Soup', category: 'soups', price: 210, diet: 'veg', isVegan: true, description: 'Slow-simmered ripe plum tomatoes infused with sweet basil and black pepper.', badge: 'Classic' },
+      { id: 'soup-2', name: 'Veg Manchow Soup', category: 'soups', price: 190, diet: 'veg', isVegan: true, description: 'Minced vegetables with garlic, ginger, green chilli, and crunchy fried noodles.', badge: 'Popular' },
+      { id: 'soup-3', name: 'Veg Hot & Sour Soup', category: 'soups', price: 190, diet: 'veg', isVegan: true, description: 'Tangy and fiery dark broth packed with shredded mushrooms, tofu, and greens.' },
+      { id: 'soup-4', name: 'Veg Peking Soup', category: 'soups', price: 210, diet: 'veg', isVegan: false, description: 'Rich warming Beijing-style broth with delicate seasonal vegetables.' },
+      { id: 'soup-5', name: 'Chicken Manchow Soup', category: 'soups', price: 210, diet: 'non-veg', isVegan: false, description: 'Shredded chicken and crushed aromatics in dark soy broth with crisp noodles.', badge: 'Chef Special' },
+      { id: 'soup-6', name: 'Chicken Minestrone Soup', category: 'soups', price: 220, diet: 'non-veg', isVegan: false, description: 'Hearty Italian soup loaded with chicken, garden herbs, beans, and parmesan.' },
+      { id: 'soup-7', name: 'Prawn Manchow Soup', category: 'soups', price: 240, diet: 'non-veg', isVegan: false, description: 'Succulent fresh prawns in a zesty garlic-ginger broth with crispy noodles.', badge: 'Gourmet' },
+
+      // Starters & Chinese
+      { id: 'starter-1', name: 'Veg Honey Chilli Potato', category: 'starters', price: 260, diet: 'veg', isVegan: true, description: 'Crispy hand-cut potato fingers wok-tossed in sweet and spicy honey glaze.', badge: 'Crowd Favorite' },
+      { id: 'starter-2', name: 'Repertwahr Cottage Cheese Chilli', category: 'starters', price: 300, diet: 'veg', isVegan: false, description: 'Signature wok-tossed paneer cubes with peppers, shallots, and house chilli sauce.', badge: 'Signature' },
+      { id: 'starter-3', name: 'Cottage Cheese Basil Hot Garlic', category: 'starters', price: 360, diet: 'veg', isVegan: false, description: 'Paneer batons tossed with Thai basil, charred garlic pods, and crushed chillies.' },
+      { id: 'starter-4', name: 'Cottage Cheese Schezwan with Peppers', category: 'starters', price: 360, diet: 'veg', isVegan: false, description: 'Fiery Sichuan pepper reduction coating seared paneer cubes with sweet peppers.' },
+      { id: 'starter-5', name: 'Cottage Cheese Manchurian Mania', category: 'starters', price: 360, diet: 'veg', isVegan: false, description: 'Lightly battered cottage cheese chunks tossed in umami coriander scallion sauce.' },
+      { id: 'starter-6', name: 'Repertwahr Chilli Chicken', category: 'starters', price: 320, diet: 'non-veg', isVegan: false, description: 'Juicy boneless chicken morsels flamed with green chillies and dark sauce.', badge: 'Signature' },
+      { id: 'starter-7', name: 'Dragon Chicken', category: 'starters', price: 320, diet: 'non-veg', isVegan: false, description: 'Tender chicken tossed with crunchy cashews, caramelized onion, and red chilli sauce.', badge: 'Must Try' },
+      { id: 'starter-8', name: 'Chicken Basil Hot Garlic', category: 'starters', price: 380, diet: 'non-veg', isVegan: false, description: 'Aromatic wok chicken tossed with garden basil, burnt garlic, and fiery chillies.' },
+      { id: 'starter-9', name: 'Chicken Schezwan with Peppers', category: 'starters', price: 380, diet: 'non-veg', isVegan: false, description: 'Spicy chicken pieces infused with homemade Sichuan paste and crisp peppers.' },
+      { id: 'starter-10', name: 'Chicken Manchurian Mania', category: 'starters', price: 380, diet: 'non-veg', isVegan: false, description: 'Crispy fried chicken balls tossed in luscious Indo-Chinese Manchurian glaze.' },
+
+      // Pasta, Continental & Thai
+      { id: 'pasta-1', name: 'Grilled Cheddar Sandwich', category: 'pasta', price: 280, diet: 'veg', isVegan: false, description: 'Artisanal sourdough stuffed with aged cheddar and sweet corn, served with fries.' },
+      { id: 'pasta-2', name: 'Veg Pasta Play', category: 'pasta', price: 350, diet: 'veg', isVegan: false, description: 'Customizable Penne or Spaghetti in creamy Alfredo, spicy Arrabbiata, or Pink Sauce.', badge: 'Customizable' },
+      { id: 'pasta-3', name: 'Chicken Pasta Play', category: 'pasta', price: 390, diet: 'non-veg', isVegan: false, description: 'Grilled chicken tossed with pasta in choice of Alfredo, Arrabbiata, or Pink sauce.', badge: 'Customizable' },
+      { id: 'pasta-4', name: 'Wood-Fired Peri Peri Pizza', category: 'pasta', price: 380, diet: 'veg', isVegan: false, description: 'Crisp thin crust with spiced tomato sauce, mozzarella, and peri peri dust.', badge: 'Wood-Fired' },
+      { id: 'pasta-5', name: 'Chicken Thai Green Curry with Rice', category: 'pasta', price: 410, diet: 'non-veg', isVegan: false, description: 'Coconut milk curry with lemongrass, kaffir lime, galangal, and steamed rice.', badge: 'Chef Special' },
+      { id: 'pasta-6', name: 'Prawn Thai Red Curry with Rice', category: 'pasta', price: 450, diet: 'non-veg', isVegan: false, description: 'Succulent prawns simmered in red chilli coconut broth with jasmine rice.', badge: 'Gourmet' },
+
+      // North Indian & Breads
+      { id: 'north-1', name: 'Punjabi Kofta', category: 'north-indian', price: 350, diet: 'veg', isVegan: false, description: 'Dumplings of grated paneer and potato in rich, cashew tomato-onion gravy.' },
+      { id: 'north-2', name: 'Dum Ka Paneer', category: 'north-indian', price: 340, diet: 'veg', isVegan: false, description: 'Paneer slow-cooked under clay-pot dum seal with caramelized onions and Awadhi spices.', badge: 'Awadhi Heritage' },
+      { id: 'bread-1', name: 'Tandoori Roti', category: 'north-indian', price: 59, diet: 'veg', isVegan: true, description: 'Freshly baked whole wheat flatbread from clay oven.' },
+      { id: 'bread-2', name: 'Missi Roti', category: 'north-indian', price: 89, diet: 'veg', isVegan: true, description: 'Gram flour bread spiced with ajwain, coriander, and onion.' },
+      { id: 'bread-3', name: 'Laccha Paratha', category: 'north-indian', price: 89, diet: 'veg', isVegan: false, description: 'Multi-layered flaky paratha brushed with pure desi ghee.' },
+      { id: 'bread-4', name: 'Plain Naan', category: 'north-indian', price: 89, diet: 'veg', isVegan: false, description: 'Soft leavened bread baked on the clay oven wall.' },
+      { id: 'bread-5', name: 'Aloo Amritsari Kulcha', category: 'north-indian', price: 115, diet: 'veg', isVegan: false, description: 'Stuffed bread with spiced mashed potatoes and pomegranate seeds.' },
+      { id: 'bread-6', name: 'Pudina Paratha', category: 'north-indian', price: 120, diet: 'veg', isVegan: false, description: 'Layered paratha generously dusted with aromatic sun-dried mint.' },
+      { id: 'bread-7', name: 'Cheese Garlic Naan', category: 'north-indian', price: 125, diet: 'veg', isVegan: false, description: 'Clay-oven naan stuffed with molten mozzarella and roasted minced garlic.', badge: 'Bestseller' },
+      { id: 'bread-8', name: 'Paneer Amritsari Kulcha', category: 'north-indian', price: 125, diet: 'veg', isVegan: false, description: 'Crispy Amritsari kulcha stuffed with spiced crushed paneer and green chillies.' },
+
+      // Shakes & Smoothies
+      { id: 'shake-1', name: 'Mango Shake', category: 'shakes', price: 220, diet: 'veg', isVegan: false, description: 'Thick Alphonso mango pulp blended with chilled milk and ice cream.' },
+      { id: 'shake-2', name: 'Virgin Pina Colada', category: 'shakes', price: 225, diet: 'veg', isVegan: true, description: 'Creamy coconut milk and fresh pineapple juice over crushed ice.', badge: 'Vegan' },
+      { id: 'shake-3', name: 'Strawberry Shake', category: 'shakes', price: 225, diet: 'veg', isVegan: false, description: 'Luscious strawberry puree whipped with ice cream.' },
+      { id: 'shake-4', name: 'Chocolate Shake', category: 'shakes', price: 229, diet: 'veg', isVegan: false, description: 'Rich Belgian cocoa fudge blended into a velvety milkshake.' },
+      { id: 'shake-5', name: 'Nutty Butterscotch Shake', category: 'shakes', price: 229, diet: 'veg', isVegan: false, description: 'Crunchy praline nuts and sweet butterscotch syrup in dairy cream.' },
+      { id: 'shake-6', name: 'Mango Smoothie', category: 'shakes', price: 230, diet: 'veg', isVegan: false, description: 'Refreshing yogurt-based smoothie with organic mango and chia seeds.' },
+      { id: 'shake-7', name: 'Choco Chip Shake', category: 'shakes', price: 239, diet: 'veg', isVegan: false, description: 'Creamy chocolate shake with crunchy mini chocolate chips.' },
+      { id: 'shake-8', name: 'KitKat Shake', category: 'shakes', price: 249, diet: 'veg', isVegan: false, description: 'Crispy wafer KitKat bars crushed into a decadent milkshake.' },
+      { id: 'shake-9', name: 'Oreo Shake', category: 'shakes', price: 249, diet: 'veg', isVegan: false, description: 'Whole Oreo cookies pulverized with sweet vanilla ice cream.', badge: 'Bestseller' },
+
+      // Coffee & Mocktails
+      { id: 'coffee-1', name: 'Repertwahr Cold Brew', category: 'coffee', price: 195, diet: 'veg', isVegan: true, description: '18-hour steeped Chikmagalur Arabica beans with hints of cocoa.', badge: 'Artisanal' },
+      { id: 'coffee-2', name: 'Library Cappuccino', category: 'coffee', price: 180, diet: 'veg', isVegan: false, description: 'Double espresso balanced with silky steamed milk and organic cinnamon.' },
+      { id: 'coffee-3', name: 'Rosemary & Lavender Latte', category: 'coffee', price: 220, diet: 'veg', isVegan: false, description: 'Chilled espresso over botanical lavender syrup and frothed milk.' },
+      { id: 'coffee-4', name: 'Hibiscus Peach Sparkler', category: 'coffee', price: 210, diet: 'veg', isVegan: true, description: 'Wild hibiscus petals, peach nectar, fresh mint, and sparkling soda.' },
+    ];
+
+    let EVENTS = JSON.parse(localStorage.getItem('repertwahr_events')) || [
+      { id: 'evt-1', title: 'Acoustic Rooftop Evenings: Sufi & Indie Ballads', category: 'Live Music', date: 'Saturday, Oct 24', time: '7:30 PM - 10:15 PM', price: 'Free Entry — Table Reservation Required', status: 'Upcoming', description: 'Intimate candlelit acoustic session under rooftop fairy lights.', frameImage: './frames/ezgif-frame-140.jpg' },
+      { id: 'evt-2', title: 'The Repertwahr Poetry Circle & Spoken Word', category: 'Open Mic', date: 'Sunday, Oct 25', time: '5:30 PM - 7:30 PM', price: '₹150 (Includes Beverage)', status: 'Upcoming', description: 'Lucknow’s poets and storytellers gather in the Library Lounge.', frameImage: './frames/ezgif-frame-080.jpg' },
+      { id: 'evt-3', title: 'Dastan-e-Lucknow: Dramatic Monologues', category: 'Theatre/Storytelling', date: 'Wednesday, Oct 28', time: '8:00 PM - 9:45 PM', price: '₹250 per guest', status: 'Upcoming', description: 'Theatrical monologue inspired by Repertwahr theatre archives.', frameImage: './frames/ezgif-frame-200.jpg' },
+      { id: 'evt-4', title: 'Afternoon Book Club: Indian Fiction', category: 'Book Reading', date: 'Friday, Oct 30', time: '3:30 PM - 5:00 PM', price: 'Free Entry', status: 'Upcoming', description: 'Monthly coffee and book discourse in the quiet Library Lounge.', frameImage: './frames/ezgif-frame-045.jpg' },
+    ];
+
+    const GALLERY_ITEMS = [
+      { id: 'g-1', category: 'rooftop', title: 'Rooftop Patio Under Fairy Lights - Evening', subtitle: 'Twinkling lights across the lush courtyard terrace', frame: './frames/ezgif-frame-001.jpg', tag: 'Rooftop Sanctuary' },
+      { id: 'g-2', category: 'library', title: 'Indoor Library Reading Corner - Daytime', subtitle: 'Sunlit bookshelves for writers and readers', frame: './frames/ezgif-frame-030.jpg', tag: 'Library Lounge' },
+      { id: 'g-3', category: 'rooftop', title: 'Breezy Terrace Seating Over Faizabad Road', subtitle: 'Open-air tables cooled by evening breezes', frame: './frames/ezgif-frame-065.jpg', tag: 'Third Space' },
+      { id: 'g-4', category: 'food', title: 'Hand-Crafted Beverages & Artisanal Coffee', subtitle: 'Chilled iced brews and velvety chocolate shakes', frame: './frames/ezgif-frame-095.jpg', tag: 'Culinary Craft' },
+      { id: 'g-5', category: 'events', title: 'Live Acoustic Session by Candlelight', subtitle: 'Indie performers creating magic for 80 guests', frame: './frames/ezgif-frame-130.jpg', tag: 'Live Culture' },
+      { id: 'g-6', category: 'library', title: 'Curated Bookshelf & Community Literature', subtitle: 'Over 1,000 titles across Indian drama and poetry', frame: './frames/ezgif-frame-160.jpg', tag: 'Literature Hub' },
+      { id: 'g-7', category: 'rooftop', title: 'Twilight Canopy & Botanical Greenery', subtitle: 'Terracotta planters, monstera foliage, and evening warmth', frame: './frames/ezgif-frame-195.jpg', tag: 'Evening Vibe' },
+      { id: 'g-8', category: 'food', title: 'Repertwahr Signature Cottage Cheese Chilli', subtitle: 'Freshly wok-flamed with crisp peppers', frame: './frames/ezgif-frame-225.jpg', tag: 'Signature Dish' },
+      { id: 'g-9', category: 'events', title: 'Theatre Monologues & Repertwahr Stage Circle', subtitle: 'Continuing the legacy of the Repertwahr Festival', frame: './frames/ezgif-frame-255.jpg', tag: 'Heritage Stage' },
+    ];
+
+    const FAQS = [
+      { q: 'Do I need a reservation?', a: 'Weekday afternoons are relaxed and walk-in friendly. Reservations are strongly recommended for Friday, Saturday, and Sunday evenings (6:00 PM onwards), especially for outdoor rooftop tables.' },
+      { q: 'Can I work from the cafe or read for a few hours?', a: 'Yes. We offer free Wi-Fi, a dedicated quiet library section, and a laptop-friendly environment during daytime hours.' },
+      { q: 'Do you have vegan and vegetarian options?', a: 'Yes. While we serve both vegetarian and non-vegetarian dishes, we offer an extensive menu of vegetarian and vegan-friendly meals.' },
+      { q: 'Is there an entry fee?', a: 'Standard cafe entry is free (you only pay for food and beverages). Special ticketed theatre or live music nights will have ticket details listed on the Events page.' },
+      { q: 'Can I book the space for private events?', a: 'Yes, our space accommodates 80 seated and up to 150 guests for private parties and cultural gatherings. Contact +91 97957 55850 for package details.' }
+    ];
+
+    // --- APPLICATION STATE ---
+    let activePage = 'home';
+    let currentFrame = 1;
+    let targetFrame = 1;
+    let renderedFrame = 1;
+    let imagesLoaded = 0;
+    let isAutoPlaying = false;
+    let autoPlayInterval = null;
+    let frameImages = [];
+    let selectedMenuCategory = 'all';
+    let selectedMenuDiet = 'all';
+    let orderTable = {};
+    let selectedEventFilter = 'All';
+    let selectedGalleryFilter = 'all';
+    let currentLightboxIdx = 0;
+    let isOwnerAuthed = false;
+    let audioCtx = null;
+    let audioGain = null;
+    let isAudioPlaying = false;
+
+    // --- 300-FRAME CANVAS SCRUBBING ENGINE ---
+    const canvas = document.getElementById('cafeCanvas');
+    const ctx = canvas ? canvas.getContext('2d') : null;
+
+    function getFrameUrl(idx) {
+      const pad = String(idx).padStart(3, '0');
+      return `./frames/ezgif-frame-${pad}.jpg`;
+    }
+
+    function initFrameLoader() {
+      for (let i = 1; i <= TOTAL_FRAMES; i++) {
+        const img = new Image();
+        img.src = getFrameUrl(i);
+        img.onload = () => {
+          imagesLoaded++;
+          const status = document.getElementById('loadStatus');
+          if (status) {
+            status.textContent = imagesLoaded === TOTAL_FRAMES ? '100% Loaded' : `Loaded ${Math.round((imagesLoaded / TOTAL_FRAMES) * 100)}%`;
+          }
+          if (i === 1) {
+            drawCanvasFrame(1);
+          }
+        };
+        // Fallback for paths
+        img.onerror = () => {
+          if (!img.dataset.retried) {
+            img.dataset.retried = '1';
+            img.src = `./public/frames/ezgif-frame-${String(i).padStart(3, '0')}.jpg`;
+          }
+        };
+        frameImages.push(img);
+      }
+    }
+
+    function drawCanvasFrame(idx) {
+      if (!ctx || !canvas) return;
+      const safeIdx = Math.max(1, Math.min(Math.round(idx), TOTAL_FRAMES));
+      let img = frameImages[safeIdx - 1];
+
+      // If not loaded, find nearest loaded frame
+      if (!img || !img.complete || img.naturalWidth === 0) {
+        for (let off = 1; off < 25; off++) {
+          const b = frameImages[safeIdx - 1 - off];
+          if (b && b.complete && b.naturalWidth > 0) { img = b; break; }
+          const a = frameImages[safeIdx - 1 + off];
+          if (a && a.complete && a.naturalWidth > 0) { img = a; break; }
+        }
+      }
+      if (!img || !img.complete || img.naturalWidth === 0) return;
+
+      const dpr = window.devicePixelRatio || 1;
+      const cw = canvas.width / dpr;
+      const ch = canvas.height / dpr;
+
+      ctx.save();
+      ctx.scale(dpr, dpr);
+      ctx.clearRect(0, 0, cw, ch);
+
+      const imgRatio = 1280 / 720;
+      const canvasRatio = cw / ch;
+      let rw, rh, ox, oy;
+
+      if (canvasRatio > imgRatio) {
+        rw = cw; rh = cw / imgRatio; ox = 0; oy = (ch - rh) / 2;
+      } else {
+        rh = ch; rw = ch * imgRatio; ox = (cw - rw) / 2; oy = 0;
+      }
+
+      ctx.drawImage(img, ox, oy, rw, rh);
+      ctx.restore();
+    }
+
+    function resizeCanvas() {
+      if (!canvas) return;
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      drawCanvasFrame(renderedFrame);
+    }
+
+    function renderLoop() {
+      const diff = targetFrame - renderedFrame;
+      if (Math.abs(diff) > 0.1) {
+        renderedFrame += diff * 0.18;
+      } else {
+        renderedFrame = targetFrame;
+      }
+      const cur = Math.round(renderedFrame);
+      if (cur !== currentFrame) {
+        currentFrame = cur;
+        drawCanvasFrame(cur);
+        const fc = document.getElementById('frameCounter');
+        if (fc) fc.textContent = `Frame ${String(cur).padStart(3, '0')} / 300`;
+        const fs = document.getElementById('frameScrubber');
+        if (fs && !isAutoPlaying) fs.value = cur;
+      }
+      requestAnimationFrame(renderLoop);
+    }
+
+    // Scroll progress handler
+    window.addEventListener('scroll', () => {
+      // Navbar background transition
+      const navbar = document.getElementById('mainNavbar');
+      if (window.scrollY > 30) {
+        navbar.classList.add('bg-parchment-100/90', 'backdrop-blur-md', 'border-b', 'border-terracotta-500/15', 'shadow-sm');
+        navbar.classList.remove('bg-gradient-to-b', 'from-charcoal-950/85');
+        document.getElementById('navLogoText').classList.add('text-charcoal-900');
+        document.getElementById('navLogoText').classList.remove('text-parchment-50');
+        document.getElementById('navSubLogoText').classList.add('text-terracotta-700');
+        document.getElementById('navSubLogoText').classList.remove('text-parchment-300');
+      } else {
+        navbar.classList.remove('bg-parchment-100/90', 'backdrop-blur-md', 'border-b', 'border-terracotta-500/15', 'shadow-sm');
+        navbar.classList.add('bg-gradient-to-b', 'from-charcoal-950/85');
+        document.getElementById('navLogoText').classList.remove('text-charcoal-900');
+        document.getElementById('navLogoText').classList.add('text-parchment-50');
+        document.getElementById('navSubLogoText').classList.remove('text-terracotta-700');
+        document.getElementById('navSubLogoText').classList.add('text-parchment-300');
+      }
+
+      if (activePage !== 'home' || isAutoPlaying) return;
+      const hero = document.getElementById('heroContainer');
+      if (!hero) return;
+
+      const rect = hero.getBoundingClientRect();
+      const total = hero.offsetHeight - window.innerHeight;
+      if (total <= 0) return;
+
+      const progress = Math.max(0, Math.min(1, -rect.top / total));
+      targetFrame = Math.floor(progress * 299) + 1;
+
+      // Narrative stage toggles
+      const s1 = document.getElementById('stage-1');
+      const s2 = document.getElementById('stage-2');
+      const s3 = document.getElementById('stage-3');
+      const s4 = document.getElementById('stage-4');
+
+      [s1, s2, s3, s4].forEach(s => s && s.classList.add('hidden'));
+
+      if (progress <= 0.22 && s1) s1.classList.remove('hidden');
+      else if (progress > 0.22 && progress <= 0.48 && s2) s2.classList.remove('hidden');
+      else if (progress > 0.48 && progress <= 0.74 && s3) s3.classList.remove('hidden');
+      else if (progress > 0.74 && s4) s4.classList.remove('hidden');
+    }, { passive: true });
+
+    function jumpToFrame(f) {
+      isAutoPlaying = false;
+      targetFrame = f;
+      const hero = document.getElementById('heroContainer');
+      if (hero) {
+        const total = hero.offsetHeight - window.innerHeight;
+        const targetScroll = ((f - 1) / 299) * total;
+        window.scrollTo({ top: hero.offsetTop + targetScroll, behavior: 'smooth' });
+      }
+    }
+
+    function onScrubberInput(val) {
+      isAutoPlaying = false;
+      jumpToFrame(parseInt(val, 10));
+    }
+
+    function toggleAutoPlay() {
+      isAutoPlaying = !isAutoPlaying;
+      const btn = document.getElementById('autoPlayBtn');
+      if (isAutoPlaying) {
+        btn.innerHTML = `<i data-lucide="pause" class="w-4 h-4 fill-current"></i>`;
+        lucide.createIcons();
+        autoPlayInterval = setInterval(() => {
+          targetFrame = (targetFrame % TOTAL_FRAMES) + 1;
+        }, 45);
+      } else {
+        btn.innerHTML = `<i data-lucide="play" class="w-4 h-4 fill-current"></i>`;
+        lucide.createIcons();
+        clearInterval(autoPlayInterval);
+      }
+    }
+
+    // Lo-Fi Cafe Binaural Soundscape Generator
+    function toggleAudioSoundscape() {
+      const btn = document.getElementById('audioToggleBtn');
+      if (!audioCtx) {
+        try {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          audioCtx = new AudioContext();
+          const bufferSize = audioCtx.sampleRate * 2;
+          const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+          const output = noiseBuffer.getChannelData(0);
+          let b0 = 0, b1 = 0, b2 = 0;
+          for (let i = 0; i < bufferSize; i++) {
+            const white = Math.random() * 2 - 1;
+            b0 = 0.99886 * b0 + white * 0.0555179;
+            b1 = 0.99332 * b1 + white * 0.0750759;
+            b2 = 0.96900 * b2 + white * 0.1538520;
+            output[i] = (b0 + b1 + b2) * 0.04;
+          }
+          const whiteNoise = audioCtx.createBufferSource();
+          whiteNoise.buffer = noiseBuffer;
+          whiteNoise.loop = true;
+
+          const filter = audioCtx.createBiquadFilter();
+          filter.type = 'lowpass';
+          filter.frequency.value = 650;
+
+          audioGain = audioCtx.createGain();
+          audioGain.gain.value = 0.08;
+
+          whiteNoise.connect(filter);
+          filter.connect(audioGain);
+          audioGain.connect(audioCtx.destination);
+          whiteNoise.start();
+
+          isAudioPlaying = true;
+          btn.classList.add('bg-forest-600', 'text-white');
+          btn.innerHTML = `<i data-lucide="volume-2" class="w-3.5 h-3.5"></i><span class="hidden lg:inline text-[11px]">Sound On</span>`;
+          lucide.createIcons();
+        } catch(e) { console.error(e); }
+      } else {
+        if (isAudioPlaying) {
+          audioCtx.suspend();
+          isAudioPlaying = false;
+          btn.classList.remove('bg-forest-600', 'text-white');
+          btn.innerHTML = `<i data-lucide="volume-x" class="w-3.5 h-3.5"></i><span class="hidden lg:inline text-[11px]">Sound Muted</span>`;
+          lucide.createIcons();
+        } else {
+          audioCtx.resume();
+          isAudioPlaying = true;
+          btn.classList.add('bg-forest-600', 'text-white');
+          btn.innerHTML = `<i data-lucide="volume-2" class="w-3.5 h-3.5"></i><span class="hidden lg:inline text-[11px]">Sound On</span>`;
+          lucide.createIcons();
+        }
+      }
+    }
+
+    // --- NAVIGATION CONTROLLER ---
+    function navigateTo(pageId) {
+      activePage = pageId;
+      document.querySelectorAll('.page-section').forEach(sec => sec.classList.add('hidden'));
+      const target = document.getElementById(`page-${pageId}`);
+      if (target) target.classList.remove('hidden');
+
+      // Update Nav links active states
+      document.querySelectorAll('.nav-item').forEach(item => {
+        if (item.getAttribute('data-page') === pageId) {
+          item.classList.add('bg-terracotta-500', 'text-white', 'shadow-sm');
+          item.classList.remove('text-parchment-200');
+        } else {
+          item.classList.remove('bg-terracotta-500', 'text-white', 'shadow-sm');
+          item.classList.add('text-parchment-200');
+        }
+      });
+
+      window.location.hash = pageId === 'home' ? '' : `#/${pageId}`;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Refresh dynamic page renders
+      if (pageId === 'menu') renderFilteredMenu();
+      if (pageId === 'events') renderEvents();
+      if (pageId === 'gallery') renderGallery();
+      if (pageId === 'experience') switchZone('library');
+
+      setTimeout(() => lucide.createIcons(), 50);
+    }
+
+    function toggleMobileDrawer() {
+      const drawer = document.getElementById('mobileDrawer');
+      drawer.classList.toggle('hidden');
+    }
+
+    // --- DIGITAL MENU LOGIC ---
+    function renderCategoryPills() {
+      const container = document.getElementById('categoryPillsContainer');
+      if (!container) return;
+      container.innerHTML = MENU_CATEGORIES.map(cat => `
+        <button onclick="setMenuCategory('${cat.id}')" class="px-4 py-2 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap transition-all cursor-pointer ${
+          selectedMenuCategory === cat.id ? 'bg-terracotta-500 text-white shadow-warm font-semibold' : 'bg-white text-charcoal-700 hover:bg-parchment-200 border border-parchment-300'
+        }">${cat.label}</button>
+      `).join('');
+    }
+
+    function setMenuCategory(catId) {
+      selectedMenuCategory = catId;
+      renderCategoryPills();
+      renderFilteredMenu();
+    }
+
+    function setMenuDietFilter(diet) {
+      selectedMenuDiet = diet;
+      document.querySelectorAll('.diet-btn').forEach(btn => {
+        if (btn.getAttribute('data-diet') === diet) {
+          btn.className = 'diet-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-charcoal-900 text-white shadow-xs';
+        } else {
+          btn.className = 'diet-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-white text-charcoal-700 border border-parchment-300';
+        }
+      });
+      renderFilteredMenu();
+    }
+
+    function renderFilteredMenu() {
+      const query = (document.getElementById('menuSearchInput')?.value || '').toLowerCase();
+      const grid = document.getElementById('menuCardsGrid');
+      if (!grid) return;
+
+      const items = MENU_ITEMS.filter(item => {
+        if (selectedMenuCategory !== 'all' && item.category !== selectedMenuCategory) return false;
+        if (selectedMenuDiet === 'veg' && item.diet !== 'veg') return false;
+        if (selectedMenuDiet === 'non-veg' && item.diet !== 'non-veg') return false;
+        if (selectedMenuDiet === 'vegan' && !item.isVegan) return false;
+        if (query && !item.name.toLowerCase().includes(query) && !item.description.toLowerCase().includes(query)) return false;
+        return true;
+      });
+
+      if (items.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-16 text-center bg-white rounded-3xl border border-parchment-300 p-8 max-w-md mx-auto">
+            <h3 class="font-serif text-xl font-bold text-charcoal-900 mb-1">No items found</h3>
+            <p class="text-xs text-charcoal-600 mb-4">Try clearing filters or search query.</p>
+            <button onclick="setMenuCategory('all'); setMenuDietFilter('all'); document.getElementById('menuSearchInput').value='';" class="px-5 py-2 rounded-full bg-terracotta-500 text-white text-xs font-semibold">Reset Filters</button>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = items.map(item => {
+        const qty = orderTable[item.id] || 0;
+        return `
+          <div class="bg-white rounded-3xl p-6 border border-parchment-300/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <div class="flex items-center gap-2">
+                  <span class="w-4 h-4 rounded-sm border flex items-center justify-center p-0.5 ${item.diet === 'veg' ? 'border-emerald-600' : 'border-rose-600'}">
+                    <span class="w-2 h-2 rounded-full ${item.diet === 'veg' ? 'bg-emerald-600' : 'bg-rose-600'}"></span>
+                  </span>
+                  ${item.isVegan ? '<span class="text-[10px] font-bold text-forest-700 bg-forest-50 px-2 py-0.5 rounded-full border border-forest-200">Vegan</span>' : ''}
+                </div>
+                ${item.badge ? `<span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-terracotta-50 text-terracotta-700 border border-terracotta-200">${item.badge}</span>` : ''}
+              </div>
+
+              <div class="flex items-start justify-between gap-3 mb-2">
+                <h3 class="font-serif text-lg sm:text-xl font-bold text-charcoal-900">${item.name}</h3>
+                <span class="font-mono font-bold text-lg text-charcoal-900">₹${item.price}</span>
+              </div>
+              <p class="text-xs sm:text-sm text-charcoal-600 font-light leading-relaxed mb-4">${item.description}</p>
+            </div>
+
+            <div class="pt-4 border-t border-parchment-200 flex items-center justify-between">
+              <span class="text-[11px] text-charcoal-500">Made fresh to order</span>
+              ${qty > 0 ? `
+                <div class="flex items-center gap-2 bg-terracotta-50 border border-terracotta-300 rounded-full px-2 py-1">
+                  <button onclick="decrementOrder('${item.id}')" class="w-6 h-6 rounded-full bg-white text-terracotta-700 flex items-center justify-center text-xs font-bold">-</button>
+                  <span class="text-xs font-bold font-mono px-1">${qty}</span>
+                  <button onclick="incrementOrder('${item.id}')" class="w-6 h-6 rounded-full bg-terracotta-500 text-white flex items-center justify-center text-xs font-bold">+</button>
+                </div>
+              ` : `
+                <button onclick="incrementOrder('${item.id}')" class="px-3.5 py-1.5 rounded-full bg-parchment-200 hover:bg-terracotta-500 hover:text-white text-charcoal-800 text-xs font-semibold transition-all">
+                  + Add to Bill
+                </button>
+              `}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function incrementOrder(id) {
+      orderTable[id] = (orderTable[id] || 0) + 1;
+      updateBillSummary();
+      renderFilteredMenu();
+    }
+
+    function decrementOrder(id) {
+      if (!orderTable[id]) return;
+      if (orderTable[id] <= 1) delete orderTable[id];
+      else orderTable[id]--;
+      updateBillSummary();
+      renderFilteredMenu();
+    }
+
+    function updateBillSummary() {
+      const pill = document.getElementById('floatingBillPill');
+      const countEl = document.getElementById('billPillCount');
+      const totalEl = document.getElementById('billPillTotal');
+      const itemsList = document.getElementById('billDrawerItems');
+
+      let count = 0;
+      let subtotal = 0;
+      let html = '';
+
+      Object.entries(orderTable).forEach(([id, q]) => {
+        const item = MENU_ITEMS.find(m => m.id === id);
+        if (!item) return;
+        count += q;
+        subtotal += item.price * q;
+        html += `
+          <div class="p-3.5 rounded-2xl bg-white border border-parchment-200 flex items-center justify-between gap-3 shadow-xs">
+            <div class="flex-1">
+              <h4 class="font-bold text-charcoal-900 text-sm">${item.name}</h4>
+              <p class="text-xs text-charcoal-600 font-mono">₹${item.price} each</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="font-mono font-bold text-sm">₹${item.price * q}</span>
+              <div class="flex items-center gap-1 bg-parchment-100 rounded-full px-2 py-0.5 border">
+                <button onclick="decrementOrder('${id}')" class="text-xs px-1 font-bold">-</button>
+                <span class="text-xs font-mono font-bold">${q}</span>
+                <button onclick="incrementOrder('${id}')" class="text-xs px-1 font-bold">+</button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      const gst = Math.round(subtotal * 0.05);
+      const grandTotal = subtotal + gst;
+
+      if (count > 0 && pill) {
+        pill.classList.remove('hidden');
+        countEl.textContent = count;
+        totalEl.textContent = `₹${grandTotal}`;
+      } else if (pill) {
+        pill.classList.add('hidden');
+      }
+
+      if (itemsList) itemsList.innerHTML = html;
+      const subEl = document.getElementById('drawerSubtotal');
+      const gstEl = document.getElementById('drawerGst');
+      const totEl = document.getElementById('drawerTotal');
+      if (subEl) subEl.textContent = `₹${subtotal}`;
+      if (gstEl) gstEl.textContent = `₹${gst}`;
+      if (totEl) totEl.textContent = `₹${grandTotal}`;
+    }
+
+    function toggleBillDrawer() {
+      document.getElementById('billDrawer').classList.toggle('hidden');
+    }
+
+    // --- THE EXPERIENCE ZONES ---
+    const ZONES_DATA = {
+      library: {
+        title: 'The Reading Library Lounge',
+        badge: 'Zone 01 • Indoor Sanctuary',
+        image: './frames/ezgif-frame-030.jpg',
+        desc: 'Step into an indoor haven bathed in gentle light. Outfitted with over 1,000 titles spanning contemporary fiction, Indian theatre scripts, and poetry anthologies, comfortable reading armchairs, ergonomic work tables, multiple charging sockets, and complimentary high-speed Wi-Fi.',
+        amenities: ['1000+ Curated Titles & Play Scripts', 'Complimentary High-Speed Wi-Fi', 'Single-Estate Barista Brews', 'Dedicated Quiet Focus Hours']
+      },
+      rooftop: {
+        title: 'The Shaded & Open-Air Green Rooftop',
+        badge: 'Zone 02 • Rooftop Terrace',
+        image: './frames/ezgif-frame-145.jpg',
+        desc: 'Perched high on the 3rd floor of Kala Niketan, our green terrace catches the cool evening breeze. Rich terracotta planters and monstera greenery create an open-air oasis illuminated under hundreds of warm fairy lights as dusk falls.',
+        amenities: ['Starlit Evening Fairy-Light Canopy', 'Seating for 80 (Up to 150 Floating)', 'Shaded Daytime Pergolas', 'Full Table Service & Continental Dining']
+      },
+      culture: {
+        title: 'Art, Performing Stage & Community Culture',
+        badge: 'Zone 03 • Cultural Stage',
+        image: './frames/ezgif-frame-245.jpg',
+        desc: 'Born out of the Repertwahr Performing Arts Festival—one of India’s most celebrated independent theatre movements. Our intimate stage hosts unplugged acoustic musicians, Urdu and Hindi poetry open-mics, and heritage dramatic monologues. Sound concludes at 11:00 PM.',
+        amenities: ['Intimate Acoustic Gigs & Open Mics', 'Heritage Storytelling Monologues', 'Diverse Creative Community', 'Acoustic Curfew at 11:00 PM']
+      }
+    };
+
+    function switchZone(zoneKey) {
+      const z = ZONES_DATA[zoneKey];
+      if (!z) return;
+
+      ['library', 'rooftop', 'culture'].forEach(k => {
+        const tab = document.getElementById(`zoneTab-${k}`);
+        if (k === zoneKey) {
+          tab.className = 'zone-tab px-5 py-3 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-2 bg-forest-900 text-parchment-100 shadow-md';
+        } else {
+          tab.className = 'zone-tab px-5 py-3 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-2 bg-white text-charcoal-700 border border-parchment-300';
+        }
+      });
+
+      const card = document.getElementById('zoneDisplayCard');
+      if (card) {
+        card.innerHTML = `
+          <div class="lg:col-span-5 relative min-h-[340px] sm:min-h-[420px] overflow-hidden bg-forest-950">
+            <img src="${z.image}" alt="${z.title}" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950/80 via-transparent to-transparent"></div>
+            <div class="absolute top-6 left-6">
+              <span class="px-3.5 py-1.5 rounded-full bg-charcoal-900/90 text-warmGold-400 border border-warmGold-500/30 text-xs font-semibold uppercase tracking-wider backdrop-blur-md">${z.badge}</span>
+            </div>
+          </div>
+          <div class="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-widest text-terracotta-600 block mb-2">Spatial Highlight</span>
+              <h2 class="font-serif text-2xl sm:text-4xl font-bold text-charcoal-900 mb-4">${z.title}</h2>
+              <p class="text-sm sm:text-base text-charcoal-700 leading-relaxed font-light mb-8">${z.desc}</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                ${z.amenities.map(a => `<div class="p-3 rounded-2xl bg-parchment-100 border border-parchment-200 text-xs font-medium text-charcoal-800">✓ ${a}</div>`).join('')}
+              </div>
+            </div>
+            <button onclick="openReservationModal()" class="px-7 py-3 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-sm transition-all shadow-warm w-max">
+              Book Table in this Zone
+            </button>
+          </div>
+        `;
+      }
+    }
+
+    function toggleEditBrandNote() {
+      const text = document.getElementById('brandNoteText');
+      const input = document.getElementById('brandNoteInput');
+      const btn = document.getElementById('editNoteBtn');
+
+      if (input.classList.contains('hidden')) {
+        input.value = text.textContent.trim().replace(/^"|"$/g, '');
+        input.classList.remove('hidden');
+        text.classList.add('hidden');
+        btn.innerHTML = `<i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i><span class="font-bold text-emerald-400">Save Note</span>`;
+      } else {
+        const val = input.value.trim();
+        text.textContent = `"${val}"`;
+        localStorage.setItem('repertwahr_owner_note', val);
+        input.classList.add('hidden');
+        text.classList.remove('hidden');
+        btn.innerHTML = `<i data-lucide="edit-3" class="w-3.5 h-3.5"></i><span>Edit Note</span>`;
+      }
+      lucide.createIcons();
+    }
+
+    // --- EVENTS LOGIC ---
+    function renderEvents() {
+      const filters = ['All', 'Live Music', 'Open Mic', 'Theatre/Storytelling', 'Book Reading'];
+      const fc = document.getElementById('eventsFilterContainer');
+      if (fc) {
+        fc.innerHTML = filters.map(f => `
+          <button onclick="setEventFilter('${f}')" class="px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap cursor-pointer ${
+            selectedEventFilter === f ? 'bg-terracotta-500 text-white shadow-warm' : 'bg-white text-charcoal-700 border border-parchment-300'
+          }">${f}</button>
+        `).join('');
+      }
+
+      const grid = document.getElementById('eventsGrid');
+      if (!grid) return;
+
+      const activeEvents = EVENTS.filter(e => e.status !== 'Past' && (selectedEventFilter === 'All' || e.category === selectedEventFilter));
+
+      if (activeEvents.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-16 px-8 rounded-3xl bg-white border border-parchment-300 text-center max-w-xl mx-auto shadow-sm">
+            <h3 class="font-serif text-2xl font-bold text-charcoal-900 mb-2">No public gigs scheduled this week</h3>
+            <p class="text-xs sm:text-sm text-charcoal-600 leading-relaxed mb-6">Our calendar is briefly clear as performers rehearse! Contact us for private cultural bookings.</p>
+            <a href="https://wa.me/919795755850" class="px-6 py-2.5 rounded-full bg-forest-900 text-white text-xs font-semibold">Inquire for Private Bookings</a>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = activeEvents.map(e => `
+        <div class="bg-white rounded-3xl overflow-hidden border border-parchment-300 shadow-md flex flex-col justify-between">
+          <div class="relative h-56 overflow-hidden bg-charcoal-950">
+            <img src="${e.frameImage || './frames/ezgif-frame-140.jpg'}" alt="${e.title}" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950/90 via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full bg-forest-900/90 text-warmGold-300 text-xs font-bold uppercase tracking-wider">${e.category}</span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <h3 class="font-serif text-2xl font-bold text-parchment-50 leading-snug">${e.title}</h3>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between space-y-4">
+            <div class="space-y-2">
+              <p class="text-xs text-charcoal-700 font-semibold">${e.date} • ${e.time}</p>
+              <p class="text-xs sm:text-sm text-charcoal-600 font-light leading-relaxed">${e.description}</p>
+              <div class="p-3 rounded-2xl bg-parchment-100 text-xs flex justify-between font-bold text-terracotta-800">
+                <span>Entry:</span><span>${e.price}</span>
+              </div>
+            </div>
+            <a href="https://wa.me/919170575793?text=Hi%2C%20I%20want%20to%20book%20seats%20for%20${encodeURIComponent(e.title)}" target="_blank" class="w-full py-3 rounded-full bg-terracotta-500 hover:bg-terracotta-600 text-white font-semibold text-sm text-center block shadow-warm">
+              Book Spot / Get Tickets
+            </a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function setEventFilter(f) {
+      selectedEventFilter = f;
+      renderEvents();
+    }
+
+    // --- OWNER CMS LOGIC ---
+    function openOwnerCMS() {
+      document.getElementById('ownerDrawer').classList.remove('hidden');
+      if (isOwnerAuthed) {
+        document.getElementById('ownerAuthBlock').classList.add('hidden');
+        document.getElementById('ownerManageBlock').classList.remove('hidden');
+        renderOwnerEventsList();
+      }
+    }
+
+    function closeOwnerCMS() {
+      document.getElementById('ownerDrawer').classList.add('hidden');
+    }
+
+    function authenticateOwner() {
+      const code = document.getElementById('ownerPasscodeInput').value.trim().toLowerCase();
+      if (code === '1234' || code === 'repertwahr') {
+        isOwnerAuthed = true;
+        document.getElementById('ownerAuthBlock').classList.add('hidden');
+        document.getElementById('ownerManageBlock').classList.remove('hidden');
+        renderOwnerEventsList();
+      } else {
+        const err = document.getElementById('ownerAuthError');
+        err.textContent = 'Invalid passcode. Hint: 1234';
+        err.classList.remove('hidden');
+      }
+    }
+
+    function renderOwnerEventsList() {
+      const list = document.getElementById('ownerEventsList');
+      if (!list) return;
+      list.innerHTML = EVENTS.map(e => `
+        <div class="p-3.5 rounded-xl bg-white border border-parchment-200 flex justify-between items-start gap-3 shadow-xs">
+          <div>
+            <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-parchment-200">${e.category} (${e.status})</span>
+            <h5 class="font-bold text-sm text-charcoal-900 mt-1">${e.title}</h5>
+            <p class="text-xs text-charcoal-600">${e.date} • ${e.time}</p>
+            <div class="flex gap-1.5 mt-2">
+              <button onclick="toggleEventStatus('${e.id}', 'Upcoming')" class="px-2 py-0.5 text-[10px] rounded ${e.status === 'Upcoming' ? 'bg-forest-800 text-white' : 'bg-parchment-200'}">Upcoming</button>
+              <button onclick="toggleEventStatus('${e.id}', 'Sold Out')" class="px-2 py-0.5 text-[10px] rounded ${e.status === 'Sold Out' ? 'bg-amber-600 text-white' : 'bg-parchment-200'}">Sold Out</button>
+              <button onclick="toggleEventStatus('${e.id}', 'Past')" class="px-2 py-0.5 text-[10px] rounded ${e.status === 'Past' ? 'bg-charcoal-800 text-white' : 'bg-parchment-200'}">Archive</button>
+            </div>
+          </div>
+          <button onclick="deleteEvent('${e.id}')" class="text-red-500 hover:text-red-700 p-1">✕</button>
+        </div>
+      `).join('');
+    }
+
+    function toggleEventStatus(id, newStatus) {
+      EVENTS = EVENTS.map(e => e.id === id ? { ...e, status: newStatus } : e);
+      localStorage.setItem('repertwahr_events', JSON.stringify(EVENTS));
+      renderOwnerEventsList();
+      renderEvents();
+    }
+
+    function deleteEvent(id) {
+      EVENTS = EVENTS.filter(e => e.id !== id);
+      localStorage.setItem('repertwahr_events', JSON.stringify(EVENTS));
+      renderOwnerEventsList();
+      renderEvents();
+    }
+
+    function handleCreateEventSubmit(e) {
+      e.preventDefault();
+      const title = document.getElementById('newEventTitle').value.trim();
+      const category = document.getElementById('newEventCategory').value;
+      const date = document.getElementById('newEventDate').value.trim();
+      const time = document.getElementById('newEventTime').value.trim() || '7:30 PM';
+      const price = document.getElementById('newEventPrice').value.trim() || 'Free Entry';
+      const desc = document.getElementById('newEventDesc').value.trim();
+
+      const newEvt = {
+        id: `evt-${Date.now()}`,
+        title, category, date, time, price, description: desc,
+        status: 'Upcoming', frameImage: './frames/ezgif-frame-140.jpg'
+      };
+
+      EVENTS.unshift(newEvt);
+      localStorage.setItem('repertwahr_events', JSON.stringify(EVENTS));
+      renderOwnerEventsList();
+      renderEvents();
+      e.target.reset();
+    }
+
+    // --- GALLERY & LIGHTBOX ---
+    function renderGallery() {
+      const cats = [
+        { id: 'all', label: 'All Photos' },
+        { id: 'library', label: 'Daytime & Library' },
+        { id: 'rooftop', label: 'Evening Rooftop' },
+        { id: 'food', label: 'Food & Craft Drinks' },
+        { id: 'events', label: 'Live Events' },
+      ];
+
+      const fc = document.getElementById('galleryFilterContainer');
+      if (fc) {
+        fc.innerHTML = cats.map(c => `
+          <button onclick="setGalleryFilter('${c.id}')" class="px-5 py-2.5 rounded-full text-xs font-semibold whitespace-nowrap cursor-pointer ${
+            selectedGalleryFilter === c.id ? 'bg-forest-900 text-parchment-100 shadow-md' : 'bg-white text-charcoal-700 border border-parchment-300'
+          }">${c.label}</button>
+        `).join('');
+      }
+
+      const grid = document.getElementById('galleryGrid');
+      if (!grid) return;
+
+      const items = GALLERY_ITEMS.filter(g => selectedGalleryFilter === 'all' || g.category === selectedGalleryFilter);
+
+      grid.innerHTML = items.map((item, idx) => `
+        <div onclick="openLightbox(${idx})" class="group bg-white rounded-3xl overflow-hidden border border-parchment-300 shadow-xs hover:shadow-xl transition-all cursor-pointer flex flex-col">
+          <div class="relative aspect-video w-full overflow-hidden bg-charcoal-950">
+            <img src="${item.frame}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950/75 via-transparent to-transparent opacity-60"></div>
+            <div class="absolute top-4 left-4">
+              <span class="px-3 py-1 rounded-full bg-forest-900/90 text-warmGold-300 text-[10px] font-bold uppercase tracking-wider">${item.tag}</span>
+            </div>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between">
+            <div>
+              <h4 class="font-serif font-bold text-charcoal-900 text-lg mb-1 group-hover:text-terracotta-600 transition-colors">${item.title}</h4>
+              <p class="text-xs text-charcoal-500 font-light leading-relaxed">${item.subtitle}</p>
+            </div>
+            <div class="pt-3 mt-3 border-t border-parchment-200 flex justify-between text-[11px] text-charcoal-400">
+              <span>Aspect: Locked (16:9)</span><span class="text-terracotta-600 font-medium">Expand ↗</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function setGalleryFilter(cat) {
+      selectedGalleryFilter = cat;
+      renderGallery();
+    }
+
+    function openLightbox(idx) {
+      const items = GALLERY_ITEMS.filter(g => selectedGalleryFilter === 'all' || g.category === selectedGalleryFilter);
+      currentLightboxIdx = idx;
+      const cur = items[idx];
+      if (!cur) return;
+
+      document.getElementById('lightboxImg').src = cur.frame;
+      document.getElementById('lightboxTag').textContent = cur.tag;
+      document.getElementById('lightboxTitle').textContent = cur.title;
+      document.getElementById('lightboxSubtitle').textContent = cur.subtitle;
+      document.getElementById('galleryLightbox').classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      document.getElementById('galleryLightbox').classList.add('hidden');
+    }
+
+    function prevLightboxImage() {
+      const items = GALLERY_ITEMS.filter(g => selectedGalleryFilter === 'all' || g.category === selectedGalleryFilter);
+      currentLightboxIdx = (currentLightboxIdx - 1 + items.length) % items.length;
+      openLightbox(currentLightboxIdx);
+    }
+
+    function nextLightboxImage() {
+      const items = GALLERY_ITEMS.filter(g => selectedGalleryFilter === 'all' || g.category === selectedGalleryFilter);
+      currentLightboxIdx = (currentLightboxIdx + 1) % items.length;
+      openLightbox(currentLightboxIdx);
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (document.getElementById('galleryLightbox').classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevLightboxImage();
+      if (e.key === 'ArrowRight') nextLightboxImage();
+    });
+
+    // --- FAQS ACCORDION ---
+    function renderFaqs() {
+      const container = document.getElementById('faqAccordionContainer');
+      if (!container) return;
+      container.innerHTML = FAQS.map((faq, idx) => `
+        <div class="bg-white rounded-2xl border border-parchment-300 overflow-hidden shadow-xs">
+          <button onclick="toggleFaq(${idx})" class="w-full p-5 text-left flex items-center justify-between font-serif font-bold text-base sm:text-lg text-charcoal-900 hover:text-terracotta-600 transition-colors">
+            <span>${faq.q}</span>
+            <span id="faqIcon-${idx}" class="text-terracotta-600 text-xl font-bold">+</span>
+          </button>
+          <div id="faqAnswer-${idx}" class="px-5 pb-5 text-xs sm:text-sm text-charcoal-600 leading-relaxed font-light border-t border-parchment-100 pt-3 hidden">
+            ${faq.a}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleFaq(idx) {
+      const ans = document.getElementById(`faqAnswer-${idx}`);
+      const icon = document.getElementById(`faqIcon-${idx}`);
+      if (!ans) return;
+      const isOpen = !ans.classList.contains('hidden');
+      if (isOpen) {
+        ans.classList.add('hidden');
+        icon.textContent = '+';
+      } else {
+        ans.classList.remove('hidden');
+        icon.textContent = '−';
+      }
+    }
+
+    // --- RESERVATION MODAL CONTROLLER ---
+    function openReservationModal() {
+      document.getElementById('reservationModal').classList.remove('hidden');
+      const d = document.getElementById('modalDate');
+      if (d && !d.value) d.value = new Date().toISOString().split('T')[0];
+    }
+
+    function closeReservationModal() {
+      document.getElementById('reservationModal').classList.add('hidden');
+    }
+
+    function fireConfettiCelebration() {
+      try {
+        confetti({
+          particleCount: 80,
+          spread: 60,
+          origin: { y: 0.6 },
+          colors: ['#C85A32', '#183124', '#E5A93C']
+        });
+      } catch(e) {}
+    }
+
+    function handleModalReserveSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('modalName').value.trim();
+      const phone = document.getElementById('modalPhone').value.trim();
+      const date = document.getElementById('modalDate').value;
+      const time = document.getElementById('modalTime').value;
+      const party = document.getElementById('modalParty').value;
+      const seating = document.getElementById('modalSeating').value;
+
+      const msg = `*Cafe Repertwahr Reservation Inquiry*
+Name: ${name}
+Phone: ${phone}
+Date: ${date}
+Time Slot: ${time}
+Party Size: ${party}
+Seating: ${seating}
+
+Please confirm my table availability!`;
+
+      fireConfettiCelebration();
+      closeReservationModal();
+      window.open(`https://wa.me/919170575793?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    function handleModalCallback() {
+      const name = document.getElementById('modalName').value.trim();
+      const phone = document.getElementById('modalPhone').value.trim();
+      if (!name || !phone) {
+        alert('Please provide your Name and Phone Number.');
+        return;
+      }
+      fireConfettiCelebration();
+      closeReservationModal();
+      alert(`Thank you, ${name}! Our floor manager will call ${phone} shortly to confirm your table.`);
+    }
+
+    function handleVisitFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('visitName').value.trim();
+      const phone = document.getElementById('visitPhone').value.trim();
+      const date = document.getElementById('visitDate').value;
+      const time = document.getElementById('visitTime').value;
+      const party = document.getElementById('visitParty').value;
+      const seating = document.getElementById('visitSeating').value;
+      const notes = document.getElementById('visitNotes').value.trim();
+
+      const msg = `*Cafe Repertwahr Reservation*
+Name: ${name}
+Phone: ${phone}
+Date: ${date}
+Time Slot: ${time}
+Party: ${party}
+Seating: ${seating}
+Notes: ${notes || 'None'}
+
+Please confirm table!`;
+
+      fireConfettiCelebration();
+      window.open(`https://wa.me/919170575793?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    function handleVisitCallback(e) {
+      e.preventDefault();
+      const name = document.getElementById('visitName').value.trim();
+      const phone = document.getElementById('visitPhone').value.trim();
+      if (!name || !phone) {
+        alert('Please fill in your Name and Phone Number.');
+        return;
+      }
+      fireConfettiCelebration();
+      alert(`Thank you, ${name}! We have scheduled a callback to ${phone} to confirm your table.`);
+    }
+
+    // --- INITIALIZATION ---
+    window.addEventListener('DOMContentLoaded', () => {
+      initFrameLoader();
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+      requestAnimationFrame(renderLoop);
+
+      // Render initial sub-components
+      renderCategoryPills();
+      renderFilteredMenu();
+      renderEvents();
+      renderGallery();
+      renderFaqs();
+      switchZone('library');
+
+      // Check URL Hash for initial route
+      const hash = window.location.hash.replace('#/', '').replace('#', '');
+      if (['home', 'menu', 'experience', 'events', 'gallery', 'visit'].includes(hash)) {
+        navigateTo(hash);
+      } else {
+        navigateTo('home');
+      }
+
+      // Initialize Lucide icons
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
